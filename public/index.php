@@ -12,4 +12,26 @@ require '../vendor/autoload.php';
 
 $router = new Router($_GET['url']);
 
-$router->showUrl();
+// creation de mes routes
+
+// FRONT
+
+// route en get ou en post avec comme parametre le chemin puis l'action
+
+// affichage de la page home
+
+$router->get('/', 'HomeController&index');
+
+// affichage de la page articles
+
+// affichage de la page games
+
+// affichage de la page contact
+
+// ADMIN
+
+// affichage de la page article
+
+// affichage de la page game
+
+// affichage de la page email

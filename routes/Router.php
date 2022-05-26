@@ -12,8 +12,5 @@ class Router{
     {
         $this->url = $url;
     }
-    public function showUrl()
-    {
-        echo $this->url;
-    }
+    
 }
