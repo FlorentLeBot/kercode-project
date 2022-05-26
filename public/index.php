@@ -20,9 +20,11 @@ $router = new Router($_GET['url']);
 
 // affichage de la page home
 
-$router->get('/', 'HomeController&index');
+$router->get('/', 'App\Controllers\HomeController&index');
 
 // affichage de la page articles
+
+$router->get('/articles/:id', 'App\Controllers\ArticleController&index');
 
 // affichage de la page games
 
@@ -35,3 +37,5 @@ $router->get('/', 'HomeController&index');
 // affichage de la page game
 
 // affichage de la page email
+
+$router->run();
