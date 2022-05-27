@@ -3,7 +3,292 @@
 /* les variables css */
 /* mini reset css */
 /* style commun à toutes les pages */
+/* le header */
+/* la page d'accueil */
+/* la page jeux de société */
+/* la page articles */
+/* la page contact */
+/* le footer */
 
-*{
-    background-color: antiquewhite;
+/* media query min-width : 768px */
+/* media query min-width : 993px */
+
+/* ---------------------------------------------------------------------------------- */
+
+/* les variables css */
+
+:root {
+  --font-size: 18px;
+  --main-color: rgba(0, 98, 107, 1);
+  --secondary-color: rgba(10, 146, 164, 1);
+  --btn-color: rgba(245, 196, 110, 1);
+  --white: rgba(255, 255, 255, 1);
+  --black: rgba(0, 0, 0, 1);
+}
+
+/* ---------------------------------------------------------------------------------- */
+
+/* mini reset css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: var(--font-size);
+}
+
+/* ---------------------------------------------------------------------------------- */
+
+/* style commun à toutes les pages */
+
+body {
+  font-family: "Rajdhani", sans-serif;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+i {
+  color: var(--white);
+}
+
+button {
+  border: none;
+}
+
+/* H1 */
+
+.title {
+  text-align: center;
+  padding: 3rem 0 0;
+  font-size: 2rem;
+  font-weight: 100;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ---------------------------------------------------------------------------------- */
+
+/* le header */
+
+#main-header {
+  background-color: var(--main-color);
+  height: 11rem;
+}
+
+/* le logo */
+
+#main-header figure {
+  width: 100%;
+}
+
+#main-header figure .logo {
+  width: 12rem;
+  display: block;
+  margin: 0 auto;
+}
+
+/* les boutons des réseaux sociaux */
+
+#main-header #btn-social-networks {
+  position: absolute;
+  top: 9.7rem;
+  left: 25%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+}
+
+.btn-social-networks {
+  text-align: center;
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 1.5rem;
+  background: #f5c46e;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+    rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+    rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+}
+.btn-social-networks:hover {
+  background: #f2b13e;
+}
+.btn-social-networks i {
+  font-size: 1.5rem;
+  margin: 0.64rem 0 0;
+}
+
+/* le menu burger */
+
+.menu-wrap {
+  position: fixed;
+  margin: 0.2rem;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.menu-wrap .toggler {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 3000;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  opacity: 0;
+}
+
+.menu-wrap .hamburger {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: var(--btn-color);
+}
+
+/* les lignes du burger */
+
+.menu-wrap .hamburger > div {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 2px;
+  background: var(--white);
+  transition: all 0.4s ease-in-out;
+}
+
+.menu-wrap .hamburger > div::before,
+.menu-wrap .hamburger > div::after {
+  content: "";
+  position: absolute;
+  z-index: 20;
+  top: -10px;
+  width: 30px;
+  height: 2px;
+  background: inherit;
+}
+
+.menu-wrap .hamburger > div:after {
+  top: 10px;
+}
+
+.toggler:checked + .hamburger > div {
+  transform: rotate(135deg);
+}
+
+.toggler:checked + .hamburger > div::before,
+.toggler:checked + .hamburger > div::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+.toggler:checked + .hamburger > div {
+  transform: rotate(225deg);
+}
+
+.toggler:checked ~ .menu {
+  visibility: visible;
+}
+
+.toggler:checked ~ .menu > div {
+  transform: scale(1);
+}
+.toggler:checked ~ .menu > div > div {
+  opacity: 1;
+  transition: opacity 0.6s ease-in-out;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  overflow: hidden;
+}
+
+.container-menu {
+  background: var(--white);
+  opacity: 0.9;
+  width: 100vh;
+  height: 100vh;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0);
+  transition: all 0.4s ease-in-out;
+}
+
+#main-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0 0;
+  text-align: left;
+  opacity: 1;
+  transition: opacity 0.4s ease;
+}
+
+#main-menu ul li {
+  padding: 0.5rem;
+}
+
+#main-menu ul li a {
+  color: var(--black);
+}
+
+/* ---------------------------------------------------------------------------------- */
+
+/* le footer */
+
+footer {
+  width: 100%;
+  height: 9rem;
+  position: relative;
+  background: #00626b;
+}
+
+footer #main-footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+footer a {
+  color: white;
+  font-size: 1rem;
+}
+
+footer i {
+  font-size: 2rem;
+}
+footer #copyright {
+  position: absolute;
+  width: 100%;
+  height: 1.5rem;
+  background-color: var(--secondary-color);
+  color: var(--white);
+  bottom: 0;
+  text-align: center;
 }

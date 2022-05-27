@@ -13,8 +13,7 @@ class ArticleController extends Controller{
     
     // Un article
     public function article(int $id)
-    {  
-        
+    {     
         return $this->view("front.article.readArticle", compact('id'));
     }
        

@@ -10,7 +10,9 @@
 
         <!-- la fleche retour en haut -->
 
-        <div></div>
+        <!-- la fleche retour en haut -->
+
+        <div class="scroll"><i class="fas fa-arrow-circle-up "></i></div>
 
     </aside>
 
