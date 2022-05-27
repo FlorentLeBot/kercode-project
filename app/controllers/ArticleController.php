@@ -2,11 +2,17 @@
 
 namespace App\Controllers;
 
-class ArticleController{
+class ArticleController extends Controller{
 
-    public function index(int $id)
+    
+    public function allArticles()
     {
-        echo "Je suis l'article " . $id;
-    }     
+        return $this->view("front.article.index");
+    } 
+    
+    public function article(int $id)
+    {
+        return $this->view("front.article.readArticle", compact('id'));
+    }
        
 }
