@@ -4,13 +4,15 @@
 
 use Router\Router;
 
+require '../vendor/autoload.php';
+
+$dotenv = \Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
 // Les constantes : mes chemins vers les vues et les scripts
 
 define('VIEWS', dirname(__DIR__) . "/" . 'app' . "/" . 'Views' .  "/");
 define('SCRIPTS', dirname($_SERVER['SCRIPT_NAME']) . "/");
-
-
-require '../vendor/autoload.php';
 
 // creation d'une nouvelle instance de la classe Router
 
@@ -26,9 +28,13 @@ $router = new Router($_GET['url']);
 
 // affichage de la page home
 
-$router->get('/', 'App\Controllers\HomeController&index');
+$router->get('/', 'App\Controllers\HomeController&home');
 
 // affichage de la page articles
+
+$router->get('/articles', 'App\Controllers\ArticleController&articles');
+
+// affichage d'un article
 
 $router->get('/articles/:id', 'App\Controllers\ArticleController&article');
 

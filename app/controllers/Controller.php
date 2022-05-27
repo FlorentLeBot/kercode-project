@@ -2,12 +2,24 @@
 
 namespace App\Controllers;
 
+use Database\DBConnection;
+
 /* Sommaire des méthodes :
 - view
 */
 
 class Controller
 {
+    public $db;
+
+    public function __construct(DBConnection $db)
+    {
+        // si on n'a pas de session on la démarre
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+        $this->db = $db;
+    }
 
     // FRONT
 

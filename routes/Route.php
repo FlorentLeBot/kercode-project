@@ -2,6 +2,8 @@
 
 namespace Router;
 
+use Database\DBConnection;
+
 class Route
 {
     // les attributes
@@ -42,7 +44,7 @@ class Route
         $params = explode('&', $this->action);
         // la première clé est le controller et la seconde la méthode
         // création d'une nouvelle instance d'un Controller
-        $controller = new $params[0]();
+        $controller = new $params[0](new DBConnection());
         $method = $params[1];
         // recuperation avec ou sans parametre
         return isset($this->matches[1]) ? $controller->$method($this->matches[1]) : $controller->$method();
