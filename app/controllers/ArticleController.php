@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+// Héritage 
 class ArticleController extends Controller{
 
     // Tous les articles 
@@ -12,7 +13,8 @@ class ArticleController extends Controller{
     
     // Un article
     public function article(int $id)
-    {
+    {  
+        
         return $this->view("front.article.readArticle", compact('id'));
     }
        
