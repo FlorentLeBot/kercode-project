@@ -8,7 +8,7 @@ use Database\DBConnection;
 - view
 */
 
-class Controller
+abstract class Controller
 {
     public $db;
 
@@ -34,9 +34,6 @@ class Controller
 
         require VIEWS . $path . '.php';
 
-        if($params){
-            $params = extract($params);
-        }
         // je stocke ma vue dans la variable $content
         $content = ob_get_clean();
 

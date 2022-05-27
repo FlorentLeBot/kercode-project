@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Database\DBConnection;
 
-class ArticleModel
+class ArticleModel extends Model
 {
-    
+    protected $table = 'articles';
 }
