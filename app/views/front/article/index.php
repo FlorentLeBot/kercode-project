@@ -4,10 +4,10 @@
     
     <!-- recuperation de tous mes articles -->
     <?php foreach ($params['articles'] as $article) : ?>
-    
+        
     <article class="">
 
-        <h2><?= $article->title ?></h2>
+        <h2><?= $article->getExcerptTitle() ?></h2>
 
         <!-- <figure>
             <img src="#" alt="#">
@@ -18,14 +18,14 @@
         </div>
 
         <div class="excerpt">
-            <p><?= $article->content ?></p>
+            <p><?= $article->getExcerptContent() ?></p>
         </div>
 
         <small class="published">
-            <?= $article->created_at ?>
+            <?= $article->getCreatedAt() ?>
         </small>
 
-        <a title="#" href="/kercode-project/articles/<?= $article->id ?>">Lire l'article</a>
+        <a class="btn" title="#" href="/kercode-project/articles/<?= $article->id ?>">Lire l'article</a>
 
     </article>
     <?php endforeach ?>
