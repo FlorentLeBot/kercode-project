@@ -6,14 +6,14 @@ class Route
 {
     // les attributes
 
-    public $path;
-    public $action;
+    // public $path;
+    // public $action;
 
-    public function __construct($path, $action) 
+    public function __construct(public string $path, public string $action) 
     {
         // retirer les / en début et fin d'url
         $this->path = trim($path, '/');
-        $this->action = $action;   
+        // $this->action = $action;   
     }
 
     // méthode de correspondance de l'url

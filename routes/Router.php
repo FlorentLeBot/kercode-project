@@ -6,10 +6,10 @@ namespace Router;
 
 class Router{
 
-    public $url;
-    public $routes = [];
+    // public $url;
+    // public $routes = [];
 
-    public function __construct($url)
+    public function __construct(public string $url, public $routes = [] )
     {
         // retirer les / en début et fin d'url
         $this->url = trim($url, '/');
