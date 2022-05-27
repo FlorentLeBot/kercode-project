@@ -4,6 +4,12 @@
 
 use Router\Router;
 
+// Les constantes : mes chemins vers les vues et les scripts
+
+define('VIEWS', dirname(__DIR__) . "/" . 'app' . "/" . 'Views' .  "/");
+define('SCRIPTS', dirname($_SERVER['SCRIPT_NAME']) . "/");
+
+
 require '../vendor/autoload.php';
 
 // creation d'une nouvelle instance de la classe Router
@@ -24,7 +30,7 @@ $router->get('/', 'App\Controllers\HomeController&index');
 
 // affichage de la page articles
 
-$router->get('/articles/:id', 'App\Controllers\ArticleController&index');
+$router->get('/articles/:id', 'App\Controllers\ArticleController&article');
 
 // affichage de la page games
 

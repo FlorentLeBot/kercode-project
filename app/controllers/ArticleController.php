@@ -4,12 +4,13 @@ namespace App\Controllers;
 
 class ArticleController extends Controller{
 
-    
-    public function allArticles()
+    // Tous les articles 
+    public function articles()
     {
         return $this->view("front.article.index");
     } 
     
+    // Un article
     public function article(int $id)
     {
         return $this->view("front.article.readArticle", compact('id'));
