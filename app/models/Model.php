@@ -56,8 +56,11 @@ abstract class Model
 
     public function getExcerptTitle(): string
     {
-        // mb_substr retourne un segnement de la chaîne de caractère
-        // paramètre la chaîne de caractère, le début de la chaîne et sa fin
-        return mb_substr($this->title, 0, 30) . ' ...';
+        $str = $this->title;
+        if(strlen($str) < 30){
+            return mb_substr($str, 0, 30);
+        }else{
+            return mb_substr($str, 0, 30) . ' ...';
+        }   
     }
 }

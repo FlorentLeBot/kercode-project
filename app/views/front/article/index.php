@@ -5,13 +5,13 @@
     <!-- recuperation de tous mes articles -->
     <?php foreach ($params['articles'] as $article) : ?>
         
-    <article class="">
+    <article>
 
         <h2><?= $article->getExcerptTitle() ?></h2>
 
-        <!-- <figure>
-            <img src="#" alt="#">
-        </figure> -->
+        <figure>
+            <img class="img-size" src="public\front\images\6253fb937fe343.76605640.png" alt="#">
+        </figure>
 
         <div class="tags">
 
