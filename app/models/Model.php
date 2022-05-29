@@ -10,7 +10,8 @@ use Database\DBConnection;
 - all
 - find
 - getCreatedAt
-- getExcerpt
+- getExcerptContent
+- getExcerptTitle
 */
 
 abstract class Model
@@ -23,20 +24,47 @@ abstract class Model
         $this->db = DBConnection::getPDO();
     }
 
+    // méthode permettant de faire des rêquetes de manière dynamique
+    public function query(string $sql, array $param = null, bool $single = null): mixed
+    {
+        // création de la méthode
+        // si $param est null alors faire une query sinon faire une requête prepare
+        $method = is_null($param) ? 'query' : 'prepare';
+        // si dans la requête en première position, il y a le mot DELETE, UPDATE ou INSERT
+        if (
+            strpos($sql, 'DELETE') === 0
+            || strpos($sql, 'UPDATE') === 0
+            || strpos($sql, 'INSERT') === 0
+        ) {
+            // création d'une requête prepare
+            $req = $this->db->$method($sql);
+
+            $req->setFetchMode(PDO::FETCH_CLASS, get_class($this), [$this->db]);
+            return $req->execute($param);
+        }
+        // si $single est null alors faire un fetchAll sinon faire un fetch 
+        $fetch = is_null($single) ? 'fetchAll' : 'fetch';
+        $req = $this->db->$method($sql);
+        $req->setFetchMode(PDO::FETCH_CLASS, get_class($this), [$this->db]);
+
+        // si la méthode est query retourne une requête simple
+        if ($method === 'query') {
+            return $req->$fetch();
+            // sinon faire une requête préparée
+        } else {
+            $req->execute($param);
+            return $req->$fetch();
+        }
+    }
+
     public function all(): array
     {
-        $req = $this->db->query("SELECT * FROM {$this->table} ORDER BY created_at DESC");
-        $req->setFetchMode(PDO::FETCH_CLASS, get_class($this), [$this->db]);
-        return $req->fetchAll();
-        // return $this->query("SELECT * FROM {$this->table} ORDER BY created_at DESC");
+        return $this->query("SELECT * FROM {$this->table} ORDER BY created_at DESC");
     }  
 
     public function find(int $id): Model
     {
-        $req = $this->db->prepare("SELECT * FROM {$this->table} WHERE id = ?");
-        $req->setFetchMode(PDO::FETCH_CLASS, get_class($this), [$this->db]);
-        $req->execute([$id]);
-        return $req->fetch();
+        return $this->query("SELECT * FROM {$this->table} WHERE id = ?", [$id], true);  
     }
 
     public function getCreatedAt(): string

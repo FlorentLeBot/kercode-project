@@ -14,7 +14,11 @@
         </figure>
 
         <div class="tags">
-
+            <?php foreach($article->getTags() as $tag) : ?>
+            <span class="tag">
+                <a href="/kercode-project/tags/<?= $tag->id ?>"><?= $tag->name ?></a>
+            </span>
+            <?php endforeach ?>
         </div>
 
         <div class="excerpt">

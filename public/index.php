@@ -42,6 +42,12 @@ $router->get('/articles/:id', 'App\Controllers\ArticleController&article');
 
 // affichage de la page contact
 
+// les articles par tag
+
+$router->get('/tags/:id', 'App\Controllers\TagController&tag');
+
+// les jeux par catégorie
+
 // ADMIN
 
 // affichage de la page article
