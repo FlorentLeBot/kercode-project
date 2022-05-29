@@ -26,7 +26,7 @@ $router = new Router($_GET['url']);
 
 // route en get ou en post avec comme parametre le chemin puis l'action
 
-// affichage de la page home
+// affichage de la page d'accueil
 
 $router->get('/', 'App\Controllers\HomeController&home');
 
@@ -38,15 +38,25 @@ $router->get('/articles', 'App\Controllers\ArticleController&articles');
 
 $router->get('/articles/:id', 'App\Controllers\ArticleController&article');
 
-// affichage de la page games
+// affichage de la page jeux de société
+
+$router->get('/games', 'App\Controllers\GameController&games');
+
+// affichage d'un jeu de société
+
+$router->get('/game', 'App\Controllers\GameController&game');
 
 // affichage de la page contact
+
+$router->get('/articles/:id', 'App\Controllers\ArticleController&article');
 
 // les articles par tag
 
 $router->get('/tags/:id', 'App\Controllers\TagController&tag');
 
 // les jeux par catégorie
+
+$router->get('/categories/:id', 'App\Controllers\CategoryController&category');
 
 // ADMIN
 
