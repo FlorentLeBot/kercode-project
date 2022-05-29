@@ -61,7 +61,7 @@
                                 <li class="btn"><a class="link" title="les jeux de société" href="/kercode-project/games">Jeux de
                                         société</a></li>
                                 <li class="btn"><a class="link" title="le blog" href="/kercode-project/articles">Articles</a></li>
-                                <li><a class="link" title="nous contacter" href="#">Contact</a></li>
+                                <li><a class="link" title="nous contacter" href="/kercode-project/contact">Contact</a></li>
                             </ul>
                         </nav>
                     </div>

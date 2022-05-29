@@ -6,23 +6,18 @@ use Database\DBConnection;
 
 class Route
 {
-    // les attributes
-
-    // public $path;
-    // public $action;
-
+    // syntaxe php 8 : public string $path directement dans les parametres
     public function __construct(public string $path, public string $action) 
     {
         // retirer les / en début et fin d'url
         $this->path = trim($path, '/');
-        // $this->action = $action;   
     }
 
     // méthode de correspondance de l'url
     public function matches(string $url)
     {
         // création d'un nouveau chemin
-        // regex
+        // regex (Tous les caractères alpha-numérique)
         $path = preg_replace('#:([A-Za-z0-9_]+)#', '([^/]+)', $this->path);
         // var_dump($path);die();
 

@@ -48,7 +48,7 @@ $router->get('/game', 'App\Controllers\GameController&game');
 
 // affichage de la page contact
 
-$router->get('/articles/:id', 'App\Controllers\ArticleController&article');
+$router->get('contact', 'App\Controllers\ContactController&contact');
 
 // les articles par tag
 
