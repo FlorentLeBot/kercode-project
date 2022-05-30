@@ -66,4 +66,9 @@ $router->get('/categories/:id', 'App\Controllers\CategoryController&category');
 
 // affichage de la page email
 
-$router->run();
+try{
+
+    $router->run();
+}catch(\Exception $e){
+    echo $e->getMessage();
+}
