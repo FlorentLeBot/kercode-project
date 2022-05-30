@@ -4,10 +4,10 @@
 
 namespace Router;
 
-class Router{
+use Exceptions\NotFoundException;
 
-    // public $url;
-    // public $routes = [];
+
+class Router{
 
     public function __construct(public string $url, public $routes = [] )
     {
@@ -31,6 +31,6 @@ class Router{
                 return $route->execute();
             }
         }
-        throw new \Exception("La page n'existe pas");
+        throw new NotFoundException();
     }   
 }

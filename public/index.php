@@ -3,6 +3,7 @@
 // importation des classes
 
 use Router\Router;
+use Exceptions\NotFoundException;
 
 require '../vendor/autoload.php';
 
@@ -13,6 +14,7 @@ $dotenv->load();
 
 define('VIEWS', dirname(__DIR__) . "/" . 'app' . "/" . 'Views' .  "/");
 define('SCRIPTS', dirname($_SERVER['SCRIPT_NAME']) . "/");
+define('VIEWSERRORS', dirname(__DIR__) . "/" . 'app' . "/" . 'Views' .  "/" . 'errors' . "/");
 
 // creation d'une nouvelle instance de la classe Router
 
@@ -66,9 +68,18 @@ $router->get('/categories/:id', 'App\Controllers\CategoryController&category');
 
 // affichage de la page email
 
-try{
+// Récupération des erreurs 
 
+// Récupération des erreurs 
+
+try {
     $router->run();
-}catch(\Exception $e){
-    echo $e->getMessage();
+} catch (NotFoundException $e) {
+    return $e->error404();
+}  
+catch (Error $error){
+    require VIEWSERRORS . 'error.php';
+}
+catch (Exception $e){
+    require VIEWSERRORS . 'exception.php'; 
 }

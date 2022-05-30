@@ -5,7 +5,7 @@
             "Router\\": "routes/",
             "App\\": "app/",
             "Database\\": "database/",
-            "Exception\\": "exceptions"
+            "Exceptions\\": "exceptions"
         }
     },
     "authors": [
