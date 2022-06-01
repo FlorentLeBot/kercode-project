@@ -46,7 +46,7 @@ $router->get('/games', 'App\Controllers\GameController&games');
 
 // affichage d'un jeu de société
 
-$router->get('/game', 'App\Controllers\GameController&game');
+$router->get('/games/:id', 'App\Controllers\GameController&game');
 
 // affichage de la page contact
 

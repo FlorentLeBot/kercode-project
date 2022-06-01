@@ -19,6 +19,8 @@
                 <?php endforeach ?>
             </div>
 
+            <a class="btn" title="#" href="/kercode-project/games/<?= $game->id ?>">Lire</a>
+
         </article>
     <?php endforeach ?>
 </section>
