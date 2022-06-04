@@ -15,10 +15,20 @@ class Router{
         $this->url = trim($url, '/');
     }
 
+    // les routes en get
+
     public function get(string $path, string $action)
     {
         // var_dump($this->routes['GET'][]); die;
         $this->routes['GET'][]  = new Route($path, $action);
+    }
+    
+    // les routes en post
+
+    public function post(string $path, string $action)
+    {
+        // var_dump($this->routes['GET'][]); die;
+        $this->routes['POST'][]  = new Route($path, $action);
     }
     
     public function run()

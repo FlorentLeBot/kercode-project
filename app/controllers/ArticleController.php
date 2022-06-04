@@ -10,18 +10,13 @@ class ArticleController extends Controller{
     // Tous les articles 
     public function articles()
     {
-        $article = new ArticleModel;
-        $articles = $article->all();
-    
+        $articles =  (new ArticleModel($this->db))->all();
         return $this->view("front.article.index", compact("articles"));
-    } 
-    
+    }  
     // Un article
     public function article(int $id)
     {     
-        $oneArticle = new ArticleModel;
-        $article = $oneArticle->find($id);
-       
+        $article = (new ArticleModel($this->db))->find($id); 
         return $this->view("front.article.readArticle", compact('article'));
     }
        

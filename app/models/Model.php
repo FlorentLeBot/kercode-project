@@ -91,4 +91,10 @@ abstract class Model
             return mb_substr($str, 0, 30) . ' ...';
         }   
     }
+
+    // supprimer dans une table en fonction de l'id 
+    public function delete(int $id): bool
+    {
+        return $this->query("DELETE FROM {$this->table} WHERE id = ?", [$id]);
+    }
 }

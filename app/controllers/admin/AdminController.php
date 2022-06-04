@@ -30,4 +30,14 @@ class AdminController extends Controller
         $games = (new GameModel($this->db))->all();
         $this->viewAdmin('admin.dashboard.game', compact('games'));
     }
+
+    // supprimer un article
+    public function delete(int $id)
+    {
+        $article = new ArticleModel($this->db);
+        $res = $article->delete($id);
+        if ($res) {
+            header("Location: /kercode-project/admin/articles");
+        }
+    }
 }

@@ -64,6 +64,10 @@ $router->get('/categories/:id', 'App\Controllers\CategoryController&category');
 
 // ADMIN
 
+// CRUD
+
+/* ------ LIRE ------ */ 
+
 // affichage de la page article
 
 $router->get('/admin/articles', 'App\Controllers\Admin\AdminController&article');
@@ -73,6 +77,14 @@ $router->get('/admin/articles', 'App\Controllers\Admin\AdminController&article')
 // affichage de la page email
 
 // Récupération des erreurs 
+
+// /* ------ CREER ------ */ 
+
+/* ------ METTRE A JOUR ------ */  
+
+/* ------ SUPPRIMER ------ */ 
+
+$router->post('/admin/articles/delete/:id', 'App\Controllers\Admin\AdminController&delete');
 
 try {
     $router->run();
