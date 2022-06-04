@@ -78,7 +78,10 @@ $router->get('/admin/articles', 'App\Controllers\Admin\AdminController&article')
 
 // Récupération des erreurs 
 
-// /* ------ CREER ------ */ 
+/* ------ CREER ------ */ 
+
+$router->get('/admin/articles/create', 'App\Controllers\Admin\AdminController&createTag');
+$router->post('/admin/articles/create', 'App\Controllers\Admin\AdminController&createArticle');
 
 /* ------ METTRE A JOUR ------ */  
 
@@ -87,7 +90,7 @@ $router->post('/admin/articles/edit/:id', 'App\Controllers\Admin\AdminController
 
 /* ------ SUPPRIMER ------ */ 
 
-$router->post('/admin/articles/delete/:id', 'App\Controllers\Admin\AdminController&delete');
+$router->post('/admin/articles/delete/:id', 'App\Controllers\Admin\AdminController&deleteArticle');
 
 try {
     $router->run();

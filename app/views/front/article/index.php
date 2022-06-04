@@ -10,8 +10,10 @@
         <h2><?= $article->getExcerptTitle() ?></h2>
 
         <figure>
-            <img class="img-size" src="public\front\images\6253fb937fe343.76605640.png" alt="#">
+            <img class="article-img" src="/kercode-project/<?=$article->img ?? "" ?>"
+                alt="<?= $article->img_name ?>">
         </figure>
+
 
         <div class="tags">
             <?php foreach($article->getTags() as $tag) : ?>

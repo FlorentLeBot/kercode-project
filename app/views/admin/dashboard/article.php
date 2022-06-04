@@ -1,5 +1,7 @@
 <h1 class="title">Les Articles</h1>
 
+<button class="btn"><a href="/kercode-project/admin/articles/create/">Créer un article</a></button>
+
 <div class="table">
     <h3 class="table-title">Id</h3>
     <h3 class="table-title">Titre</h3>

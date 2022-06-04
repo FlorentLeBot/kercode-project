@@ -1,17 +1,27 @@
-<h2>Modifier <?= $params['article']->title ?></h2>
 
-<form id="form-article" enctype="multipart/form-data" method="POST"
-    action="/kercode-project/admin/articles/edit/<?= $params['article']->id ?>">
+<form id="form-blog" enctype="multipart/form-data" method="POST"
+    action="<?= isset($params['article']) ? "/kercode-project/admin/articles/edit/{$params['article']->id}" : "/kercode-project/admin/articles/create" ?>">
     <!-- TITRE -->
     <p>
         <label for="title-article">Titre de l'article</label>
-        <input id='title-article' type="text" name="title" value="<?= $params['article']->title ?>">
+        <input id='title-article' type="text" name="title" value="<?= $params['article']->title ?? '' ?>">
     </p>
     <!-- CONTENU -->
     <p>
         <label for="content-article">Contenu de l'article</label>
         <textarea name="content" id="content-article" cols="30"
             rows="8"><?= $params['article']->content ?? ' ' ?></textarea>
+    </p>
+    <!-- IMAGE -->
+    <p>
+        <label for="img-article">Ajouter une image</label>
+        <input type="file" name="img" id="img-article" accept="image/png, image/jpeg">
+    </p>
+
+    <!-- NOM DE L'IMAGE -->
+    <p>
+        <label for="img-name-article">Donner un nom à l'image</label>
+        <input type="text" name="img_name" id="img-name-article">
     </p>
 
     <!-- TAG -->
@@ -26,7 +36,6 @@
             <?php endforeach ?>
         </select>
     </p>
-
     <p>
         <!-- VALIDATION -->
         <button

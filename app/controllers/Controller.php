@@ -30,10 +30,12 @@ abstract class Controller
     {
         // système de buffering, enregistrement dans la mémoire tampon
         ob_start();
+        
         // je remplace les . par des / dans le chemin
         $path = str_replace('.', "/", $path);
 
         require VIEWS . $path . '.php';
+
         // je stocke ma vue dans la variable $content
         $content = ob_get_clean();
 

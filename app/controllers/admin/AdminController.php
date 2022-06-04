@@ -5,11 +5,25 @@ namespace App\Controllers\Admin;
 use App\Models\TagModel;
 use App\Models\GameModel;
 use App\models\ArticleModel;
+use App\models\CategoryModel;
 use App\Controllers\Controller;
 
 /* Sommaire des méthodes:
 - article
 - game
+- contact
+
+- createArticle
+- createGame
+
+- editeArticle
+- updateArticle
+- editeGame
+- updateGame
+
+- deleteArticle
+- deleteGame
+
 */
 
 class AdminController extends Controller
@@ -24,18 +38,82 @@ class AdminController extends Controller
         $articles = (new ArticleModel($this->db))->all();
         $this->viewAdmin('admin.dashboard.article', compact('articles'));
     }
+
     // affichage de la page game - administration des fiches pour les jeux de société
     public function game(): void
     {
         $games = (new GameModel($this->db))->all();
         $this->viewAdmin('admin.dashboard.game', compact('games'));
     }
+
+    // affichage de la page contact récupération du formulaire de contact
+    public function contact(): void
+    {
+        // $contact = (new ContactModel($this->db))->getMail();
+        // $this->viewAdmin('admin.dashboard.contact', compact('contact'));
+    }
+
+    /* CREER */
+
+    // -----------------------------------------------------------------------------------------------------
+    
+    public function createTag(): void
+    {
+        $tags = (new TagModel($this->db))->all();
+        $this->viewAdmin('admin.dashboard.formArticle', compact('tags'));
+    }
+
+    public function createCategory(): void
+    {
+        $categories = (new CategoryModel($this->db))->all();
+        $this->viewAdmin('admin.dashboard.formGame', compact('categories'));
+    }
+
+    public function createArticle(): void
+    {
+        $article = new ArticleModel($this->db);
+        if (isset($_POST['tags'])) {
+            // array_pop() dépile et retourne la valeur du dernier élément du tableau, le raccourcissant d'un élément.
+            $tags = array_pop($_POST);
+            $res = $article->create($_POST, $tags);
+            header('Location: /kercode-project/admin/articles');
+        } else {
+            $res = $article->create($_POST);
+            header('Location: /kercode-project/admin/articles');
+        }
+    }
+
+    public function createGame(): void
+    {
+        $game = new GameModel($this->db);
+        if (isset($_POST['categories'])) {
+            // array_pop() dépile et retourne la valeur du dernier élément du tableau, le raccourcissant d'un élément.
+            $categories = array_pop($_POST);
+            $res = $game->create($_POST, $categories);
+            header('Location: /kercode-project/admin/articles');
+        } else {
+            $res = $game->create($_POST);
+            header('Location: /kercode-project/admin/articles');
+        }
+    }
+    /* METTRE A JOUR */
+
+    // -----------------------------------------------------------------------------------------------------
+
     public function editArticle(int $id)
     {
         $article = (new ArticleModel($this->db))->find($id);
         $tags = (new TagModel($this->db))->all();
         return $this->viewAdmin('admin.dashboard.formArticle', compact('article', 'tags'));
     }
+
+    public function editGame(int $id)
+    {
+        $game = (new GameModel($this->db))->find($id);
+        $categories = (new CategoryModel($this->db))->all();
+        return $this->viewAdmin('admin.dashboard.formGame', compact('game', 'categories'));
+    }
+
     // mettre à jour un article
     public function updateArticle(int $id)
     {
@@ -46,12 +124,38 @@ class AdminController extends Controller
             header('Location: /kercode-project/admin/articles');
         }
     }
-    // supprimer un article
-    public function delete(int $id)
+
+    // mettre à jour un jeu
+    public function updateGame(int $id) : void
+    {
+        $game = new GameModel($this->db);
+        $categories = array_pop($_POST);
+        $res = $game->updateGame($id, $categories);
+        // redirection
+        if ($res) {
+            header('Location: /kercode-project/admin/games');
+        }
+    }
+
+    /* SUPPRIMER */
+
+    // -----------------------------------------------------------------------------------------------------
+
+    public function deleteArticle(int $id)
     {
         $res = (new ArticleModel($this->db))->delete($id);
         if ($res) {
             header("Location: /kercode-project/admin/articles");
         }
     }
-}
+
+    public function deleteGame(int $id) : void
+    {
+        $game = new GameModel($this->db);
+        $res = $game->delete($id);
+        if ($res) {
+            header("Location: /kercode-project/admin/games");
+        }
+    }
+
+}  
