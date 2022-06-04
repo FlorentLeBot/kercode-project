@@ -15,8 +15,9 @@ $dotenv->load();
 define('VIEWS', dirname(__DIR__) . "/" . 'app' . "/" . 'Views' .  "/");
 define('VIEWSADMIN', dirname(__DIR__) . "/" . 'app' . "/" . 'Views' . "/");
 
-define('SCRIPTS', dirname($_SERVER['SCRIPT_NAME']) . "/");
 define('VIEWSERRORS', dirname(__DIR__) . "/" . 'app' . "/" . 'Views' .  "/" . 'errors' . "/");
+
+define('SCRIPTS', dirname($_SERVER['SCRIPT_NAME']) . "/");
 
 // creation d'une nouvelle instance de la classe Router
 
@@ -50,10 +51,6 @@ $router->get('/games', 'App\Controllers\GameController&games');
 
 $router->get('/games/:id', 'App\Controllers\GameController&game');
 
-// affichage de la page contact
-
-$router->get('contact', 'App\Controllers\ContactController&contact');
-
 // les articles par tag
 
 $router->get('/tags/:id', 'App\Controllers\TagController&tag');
@@ -61,6 +58,14 @@ $router->get('/tags/:id', 'App\Controllers\TagController&tag');
 // les jeux par catégorie
 
 $router->get('/categories/:id', 'App\Controllers\CategoryController&category');
+
+// affichage de la page contact
+
+$router->get('contact', 'App\Controllers\ContactController&contact');
+
+// envoyer un email
+
+$router->post('contact', 'App\Controllers\ContactController@postMail');
 
 // ADMIN
 
@@ -74,23 +79,57 @@ $router->get('/admin/articles', 'App\Controllers\Admin\AdminController&article')
 
 // affichage de la page game
 
+$router->get('/admin/games', 'App\Controllers\Admin\AdminController&game');
+
 // affichage de la page email
 
-// Récupération des erreurs 
+$router->get('/admin/contact', 'App\Controllers\Admin\AdminController&contact');
+
+// Lire un message
+
+$router->get('/admin/read/:id', 'App\Controllers\Admin\AdminController@readMessage');
 
 /* ------ CREER ------ */ 
+
+// créer un article
 
 $router->get('/admin/articles/create', 'App\Controllers\Admin\AdminController&createTag');
 $router->post('/admin/articles/create', 'App\Controllers\Admin\AdminController&createArticle');
 
+// créer un jeu
+
+$router->get('/admin/games/create', 'App\Controllers\Admin\AdminController&createCategory');
+$router->post('/admin/games/create', 'App\Controllers\Admin\AdminController&createGame');
+
 /* ------ METTRE A JOUR ------ */  
+
+// mettre à jour un article
 
 $router->get('/admin/articles/edit/:id', 'App\Controllers\Admin\AdminController&editArticle');
 $router->post('/admin/articles/edit/:id', 'App\Controllers\Admin\AdminController&updateArticle');
 
+// mettre à jour un jeu
+
+$router->get('/admin/games/edit/:id', 'App\Controllers\Admin\AdminController&editGame');
+$router->post('/admin/games/edit/:id', 'App\Controllers\Admin\AdminController&updateGame');
+
 /* ------ SUPPRIMER ------ */ 
 
+// supprimer un article
+
 $router->post('/admin/articles/delete/:id', 'App\Controllers\Admin\AdminController&deleteArticle');
+
+// supprimer un jeu
+
+$router->post('/admin/games/delete/:id', 'App\Controllers\Admin\AdminController&deleteGame');
+
+// supprimer un message
+
+$router->get('/admin/contact', 'App\Controllers\Admin\AdminController&deleteMessage');
+
+// Pagination
+
+// Récupération des erreurs
 
 try {
     $router->run();
