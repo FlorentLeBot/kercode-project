@@ -67,9 +67,7 @@ $router->get('contact', 'App\Controllers\ContactController&contact');
 
 $router->post('contact', 'App\Controllers\ContactController&postMail');
 
-// ADMIN
-
-// CRUD
+// ADMIN (CRUD)
 
 /* ------ LIRE ------ */ 
 
@@ -87,7 +85,7 @@ $router->get('/admin/contact', 'App\Controllers\Admin\AdminController&contact');
 
 // Lire un message
 
-$router->get('/admin/read/:id', 'App\Controllers\Admin\AdminController@readMessage');
+$router->get('/admin/contact/:id', 'App\Controllers\Admin\AdminController&readMessage');
 
 /* ------ CREER ------ */ 
 
@@ -125,7 +123,7 @@ $router->post('/admin/games/delete/:id', 'App\Controllers\Admin\AdminController&
 
 // supprimer un message
 
-$router->get('/admin/contact', 'App\Controllers\Admin\AdminController&deleteMessage');
+$router->post('/admin/contact/delete/:id', 'App\Controllers\Admin\AdminController&deleteMessage');
 
 // Pagination
 

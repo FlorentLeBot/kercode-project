@@ -5,6 +5,7 @@ namespace App\Controllers\Admin;
 use App\Models\TagModel;
 use App\Models\GameModel;
 use App\models\ArticleModel;
+use App\Models\ContactModel;
 use App\models\CategoryModel;
 use App\Controllers\Controller;
 
@@ -13,7 +14,10 @@ use App\Controllers\Controller;
 - article
 - game
 - contact
+- readMessage
 
+- createTag
+- createCategory
 - createArticle
 - createGame
 
@@ -24,6 +28,7 @@ use App\Controllers\Controller;
 
 - deleteArticle
 - deleteGame
+- deleteMessage
 
 */
 
@@ -47,12 +52,19 @@ class AdminController extends Controller
         $this->viewAdmin('admin.dashboard.game', compact('games'));
     }
 
-    // affichage de la page contact récupération du formulaire de contact
+    // affichage de la page contact - récupération du formulaire de contact
     public function contact(): void
     {
-        // $contact = (new ContactModel($this->db))->getMail();
-        // $this->viewAdmin('admin.dashboard.contact', compact('contact'));
+        $contact = (new ContactModel($this->db))->getMail();
+        $this->viewAdmin('admin.dashboard.contact', compact('contact'));
     }
+
+     // lire le message complet
+     public function readMessage(int $id): void
+     {
+         $msg = (new ContactModel($this->db))->find($id);
+         $this->viewAdmin('admin.dashboard.readMessage', compact('msg'));
+     }
 
     /* CREER */
 
@@ -142,7 +154,7 @@ class AdminController extends Controller
 
     // -----------------------------------------------------------------------------------------------------
 
-    public function deleteArticle(int $id)
+    public function deleteArticle(int $id) : void
     {
         $res = (new ArticleModel($this->db))->delete($id);
         if ($res) {
@@ -152,10 +164,26 @@ class AdminController extends Controller
 
     public function deleteGame(int $id) : void
     {
-        $game = new GameModel($this->db);
-        $res = $game->delete($id);
+        $res = (new GameModel($this->db))->delete($id);
         if ($res) {
             header("Location: /kercode-project/admin/games");
+        }
+    }
+
+    // public function deleteMessage(int $id): void
+    // {
+    //     $res = (new ContactModel($this->db))->delete($id);      
+    //     if ($res) {
+    //         header('Location: /kercode-project/admin/contact');
+    //     }
+    // }
+    public function deleteMessage(int $id): void
+    {
+        $message = new ContactModel($this->db);
+        $res = $message->delete($id);
+      
+        if ($res) {
+            header('Location: /kercode-project/admin/contact');
         }
     }
 

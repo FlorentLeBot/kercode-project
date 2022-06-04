@@ -31,13 +31,13 @@ class GameModel extends Model
         $content = htmlspecialchars($_POST['content']);
 
         // supprimer les catégories actuels
-        $stmt = $this->db->prepare("DELETE FROM board_game_category WHERE board_game_id = ?");
-        $res = $stmt->execute([$id]);
+        $req = $this->db->prepare("DELETE FROM board_game_category WHERE board_game_id = ?");
+        $res = $req->execute([$id]);
 
         // réinsertion des données
         foreach ($categories as $categoryId) {
-            $stmt = $this->db->prepare("INSERT board_game_category (board_game_id, category_id) VALUES (?, ?)");
-            $stmt->execute([$id, htmlspecialchars($categoryId)]);
+            $req = $this->db->prepare("INSERT board_game_category (board_game_id, category_id) VALUES (?, ?)");
+            $req->execute([$id, htmlspecialchars($categoryId)]);
         }
 
         parent::update([
@@ -67,8 +67,8 @@ class GameModel extends Model
         $id = $this->db->lastInsertId();
 
         foreach ($categories as $categoryId) {
-            $stmt = $this->db->prepare("INSERT board_game_category (board_game_id, category_id) VALUES (?, ?)");
-            $stmt->execute([$id, htmlspecialchars($categoryId)]);
+            $req = $this->db->prepare("INSERT board_game_category (board_game_id, category_id) VALUES (?, ?)");
+            $req->execute([$id, htmlspecialchars($categoryId)]);
         }
         return true;
     }

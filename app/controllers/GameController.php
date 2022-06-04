@@ -14,7 +14,7 @@ class GameController extends Controller
         return $this->view('front.game.index', compact('games'));
     }
     
-    // affichage d'une fiche
+    // affichage d'un jeu
     public function game(int $id)
     {
         $oneGame = new GameModel;
