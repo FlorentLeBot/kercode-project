@@ -82,6 +82,9 @@ $router->get('/admin/articles', 'App\Controllers\Admin\AdminController&article')
 
 /* ------ METTRE A JOUR ------ */  
 
+$router->get('/admin/articles/edit/:id', 'App\Controllers\Admin\AdminController&editArticle');
+$router->post('/admin/articles/edit/:id', 'App\Controllers\Admin\AdminController&updateArticle');
+
 /* ------ SUPPRIMER ------ */ 
 
 $router->post('/admin/articles/delete/:id', 'App\Controllers\Admin\AdminController&delete');

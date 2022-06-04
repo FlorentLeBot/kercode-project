@@ -15,9 +15,8 @@
         <li class="item article-title"><?= $article->title ?></li>
         <li class="item article-created-at"><?= $article->getCreatedAt() ?></li>
         <li class="item">
-            <button class="btn><a title="#" href="#">Modifier</a></button>
-            <form action="/kercode-project/admin/articles/delete/<?= $article->id ?>">
-                <span class="btn modale">
+            <button class="btn"><a title="#" href="/kercode-project/admin/articles/edit/<?= $article->id ?>">Modifier</a></button>
+            <form action="/kercode-project/admin/articles/delete/<?= $article->id ?>" method="post">
                     <button type="submit" class="btn">Supprimer</a></button>
             </form>
         </li>

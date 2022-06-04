@@ -92,6 +92,29 @@ abstract class Model
         }   
     }
 
+    // mettre à jour dans la table les champs en fonction de l'id de maniere dynamique
+    public function update(array $data, $tag = null): mixed
+    {   
+        $sqlRequestPart = "";
+        $i = 1;
+
+        //récupération des champs d'un formulaire 
+        foreach ($data as $key => $value) {
+            // si on arrive à la fin on s'arrete sinon on rajoute une virgule
+            $comma = $i === count($data) ? '' : ', ';
+            $i++;
+            if ($key === "id") {
+                continue;
+            }
+            // ex : title, = la clé du tableau qui push dans sqlRequestPart 
+            $sqlRequestPart .= "{$key} = :{$key}{$comma}";
+            
+        }
+
+        return $this->query("UPDATE {$this->table} SET {$sqlRequestPart} 
+                            WHERE id = :id", $data);
+    }
+
     // supprimer dans une table en fonction de l'id 
     public function delete(int $id): bool
     {

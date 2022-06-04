@@ -17,7 +17,7 @@ class ArticleController extends Controller{
     public function article(int $id)
     {     
         $article = (new ArticleModel($this->db))->find($id); 
-        return $this->view("front.article.readArticle", compact('article'));
+        return $this->view("front.article.readArticle", compact('article', 'ta'));
     }
        
 }
