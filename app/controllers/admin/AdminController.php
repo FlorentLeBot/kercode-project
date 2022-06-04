@@ -1,30 +1,33 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Controllers\Admin;
 
-// SOMMAIRE : 
-// - articles
-// - games 
-// - contact
-
+use App\Models\GameModel;
 use App\models\ArticleModel;
-use App\controllers\Controller;
+use App\Controllers\Controller;
 
-class AdminController extends Controller{
+/* Sommaire des méthodes:
+- article
+- game
+*/
 
-    public function articles()
-    {
-        
+class AdminController extends Controller
+{
+    /* LES VUES */
+
+    // -----------------------------------------------------------------------------------------------------
+
+    // affichage de la page article - administration des articles
+    public function article(): void
+    { 
+        $articles = (new ArticleModel($this->db))->all();
+        $this->viewAdmin('admin.dashboard.article', compact('articles'));
     }
 
-    public function games()
+    // affichage de la page game - administration des fiches pour les jeux de société
+    public function game(): void
     {
-        
+        $games = (new GameModel($this->db))->all();
+        $this->viewAdmin('admin.dashboard.game', compact('games'));
     }
-
-    public function contact()
-    {
-
-    }
-
 }

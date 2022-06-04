@@ -1,15 +1,17 @@
 <?php
 
-namespace App\controllers;
+namespace App\Controllers;
 
 use Database\DBConnection;
 
 /* Sommaire des méthodes :
 - view
+- viewAdmin
 */
 
 abstract class Controller
 {
+
     public $db;
 
     public function __construct(DBConnection $db)
@@ -24,19 +26,31 @@ abstract class Controller
     // FRONT
 
     // affichage des vues avec comme arguments le chemin et un paramètre optionnel (ex: id)
-    protected function view(string $path, array $params = null)
+    protected function view(string $path, array $params = null) : void
     {
         // système de buffering, enregistrement dans la mémoire tampon
         ob_start();
-        
         // je remplace les . par des / dans le chemin
         $path = str_replace('.', "/", $path);
 
         require VIEWS . $path . '.php';
-
         // je stocke ma vue dans la variable $content
         $content = ob_get_clean();
 
         require VIEWS . "/" .  'front' . "/" . 'layouts' . "/" . 'layout.php';
+    }
+
+    // affichage les vues de l'administration
+    protected function viewAdmin(string $path, array $params = null) : void
+    {
+        ob_start();
+
+        $path = str_replace('.', "/", $path);
+
+        require VIEWSADMIN . $path . '.php';
+
+        $adminContent = ob_get_clean();
+
+        require VIEWSADMIN . "/" . 'admin' . "/" . 'layouts' . "/" . 'layout.php';
     }
 }

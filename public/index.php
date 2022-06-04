@@ -13,6 +13,8 @@ $dotenv->load();
 // Les constantes : mes chemins vers les vues et les scripts
 
 define('VIEWS', dirname(__DIR__) . "/" . 'app' . "/" . 'Views' .  "/");
+define('VIEWSADMIN', dirname(__DIR__) . "/" . 'app' . "/" . 'Views' . "/");
+
 define('SCRIPTS', dirname($_SERVER['SCRIPT_NAME']) . "/");
 define('VIEWSERRORS', dirname(__DIR__) . "/" . 'app' . "/" . 'Views' .  "/" . 'errors' . "/");
 
@@ -64,11 +66,11 @@ $router->get('/categories/:id', 'App\Controllers\CategoryController&category');
 
 // affichage de la page article
 
+$router->get('/admin/articles', 'App\Controllers\Admin\AdminController&article');
+
 // affichage de la page game
 
 // affichage de la page email
-
-// Récupération des erreurs 
 
 // Récupération des erreurs 
 

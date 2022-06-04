@@ -1,9 +1,8 @@
 <?php
 
-namespace App\controllers;
+namespace App\Controllers;
 
 use App\Models\ArticleModel;
-
 
 // Héritage 
 class ArticleController extends Controller{
@@ -20,8 +19,8 @@ class ArticleController extends Controller{
     // Un article
     public function article(int $id)
     {     
-        $article = new ArticleModel;
-        $article = $article->find($id);
+        $oneArticle = new ArticleModel;
+        $article = $oneArticle->find($id);
        
         return $this->view("front.article.readArticle", compact('article'));
     }

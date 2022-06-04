@@ -1,6 +1,6 @@
 <?php
 
-namespace App\controllers;
+namespace App\Controllers;
 
 use App\Models\GameModel;
 
@@ -17,8 +17,8 @@ class GameController extends Controller
     // affichage d'une fiche
     public function game(int $id)
     {
-        $req = new GameModel;
-        $game = $req->find($id);
+        $oneGame = new GameModel;
+        $game = $oneGame->find($id);
         return $this->view('front.game.readGame', compact('game'));
     }
 }
