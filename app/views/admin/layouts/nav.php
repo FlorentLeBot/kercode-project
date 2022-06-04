@@ -10,11 +10,11 @@
                     <i class="fa-solid fa-database"></i>
                     <span class="nav-links">Articles</span>
                 </a>
-                <a href="#" class="bloc-link">
+                <a href="/kercode-project/admin/games" class="bloc-link">
                     <i class="fa-solid fa-database"></i>
                     <span class="nav-links">Fiches jeux</span>
                 </a>
-                <a href="#" class="bloc-link">
+                <a href="/kercode-project/admin/contact" class="bloc-link">
                     <i class="fa-solid fa-envelope"></i>
                     <span class="nav-links">Contact</span>
                 </a>
