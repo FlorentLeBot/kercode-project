@@ -1,7 +1,7 @@
 <!-- le formulaire de contact -->
-<section class="form-contact">
+<section class="container-form">
     <h1>Nous contacter</h1>
-    <form>
+    <form id="form-contact" action="/kercode-project/contact" method="POST">
         <fieldset class="form">
             <legend>Laissez-nous un message</legend>
 
@@ -15,7 +15,7 @@
                 <input type="text" id="lastname" name="lastname" placeholder="nom" required>
             </p>
 
-            <p class="form__group">
+            <p>
                 <label for="email">Entrez votre email </label>
                 <input type="email" id="email" name="email" placeholder="email" required>
             </p>

@@ -17,9 +17,9 @@
         <li class="game-title"><?= $game->title ?></li>
         <li class="game-created-at"><?= $game->getCreatedAt() ?></li>
         <li>
-            <span class="btn"><a href="/kercode-project/admin/games/edit/<?= $game->id ?>">Modifier</a></span>
+            <button class="btn"><a href="/kercode-project/admin/games/edit/<?= $game->id ?>">Modifier</a></button>
             <form action="/kercode-project/admin/games/delete/<?= $game->id ?>" method="post">
-                <button type="submit">Supprimer</button>
+                <button class="btn" type="submit">Supprimer</button>
             </form>
             
         </li>

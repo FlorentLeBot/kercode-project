@@ -8,7 +8,8 @@ use App\models\ArticleModel;
 use App\models\CategoryModel;
 use App\Controllers\Controller;
 
-/* Sommaire des méthodes:
+/* SOMMAIRE :
+
 - article
 - game
 - contact

@@ -65,7 +65,7 @@ $router->get('contact', 'App\Controllers\ContactController&contact');
 
 // envoyer un email
 
-$router->post('contact', 'App\Controllers\ContactController@postMail');
+$router->post('contact', 'App\Controllers\ContactController&postMail');
 
 // ADMIN
 
