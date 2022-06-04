@@ -1,4 +1,4 @@
-<h1>Administration des articles</h1>
+<h1 class="title">Les Articles</h1>
 
 <div class="table">
     <h3 class="table-title">Id</h3>
@@ -14,7 +14,7 @@
         <li class="item article-id"><?= $article->id ?></li>
         <li class="item article-title"><?= $article->title ?></li>
         <li class="item article-created-at"><?= $article->getCreatedAt() ?></li>
-        <li class="item">
+        <li>
             <button class="btn"><a title="#" href="/kercode-project/admin/articles/edit/<?= $article->id ?>">Modifier</a></button>
             <form action="/kercode-project/admin/articles/delete/<?= $article->id ?>" method="post">
                     <button type="submit" class="btn">Supprimer</a></button>
