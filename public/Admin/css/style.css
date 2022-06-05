@@ -48,12 +48,20 @@ a {
   text-decoration: none;
 }
 
+/* ---------------------------------------------------------------------------------- */
+
+/*style commun à toutes les pages */
+
 .global-container {
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr;
 }
+
+/* ---------------------------------------------------------------------------------- */
+
+/* nav */
 
 .nav-logo h1 {
   text-align: center;

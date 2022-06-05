@@ -9,8 +9,8 @@ class GameController extends Controller
     // affichage de toutes les fiches des jeux
     public function games()
     {
-        $req = new GameModel;
-        $games = $req->all();
+        $game = new GameModel;
+        $games = $game->all();
         return $this->view('front.game.index', compact('games'));
     }
     

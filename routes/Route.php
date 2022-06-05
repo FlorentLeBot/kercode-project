@@ -19,11 +19,9 @@ class Route
         // création d'un nouveau chemin
         // regex (Tous les caractères alpha-numérique)
         $path = preg_replace('#:([A-Za-z0-9_]+)#', '([^/]+)', $this->path);
-        // var_dump($path);die();
 
         // tout le chemin
         $pathToMatch = "#^$path$#";
-        // var_dump($pathToMatch);die();
 
         if (preg_match($pathToMatch, $url, $matches)) {
             $this->matches = $matches;

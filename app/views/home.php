@@ -17,5 +17,19 @@
     <?php endforeach ?>
 </section>
 
-<!-- affichage des 3 derniers articles -->
+<!-- affichage des 3 derniers jeux -->
 
+<section class="card">
+
+    <h2>Les derniers jeux</h2>
+
+    <?php foreach ($params['games'] as $game) : ?>
+    <article>
+        <h3><?= $game->title ?></h3>
+        <!-- <figure>
+            <img src="#" alt="#">
+        </figure> -->
+        <small class="published"><?= $game->getCreatedAt() ?></small>
+    </article>
+    <?php endforeach ?>
+</section>

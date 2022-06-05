@@ -6,7 +6,8 @@ use PDO;
 use DateTime;
 use Database\DBConnection;
 
-/* Sommaire des méthodes:
+/* SOMMAIRE :
+
 - query
 - all
 - find
@@ -16,6 +17,7 @@ use Database\DBConnection;
 - update
 - delete 
 - upload 
+
 */
 
 abstract class Model
@@ -75,7 +77,7 @@ abstract class Model
     {
         // création d'un nouvelle instance DateTime avec comme paramètre mes created_at 
         // retourne une chaîne de caractère
-        // puis je la formate
+        // puis je formate
         return $date = (new DateTime($this->created_at))->format('d/m/Y à H:i');
     }
 
@@ -128,8 +130,7 @@ abstract class Model
                 continue;
             }
             // ex : title, = la clé du tableau qui push dans sqlRequestPart 
-            $sqlRequestPart .= "{$key} = :{$key}{$comma}";
-            
+            $sqlRequestPart .= "{$key} = :{$key}{$comma}";   
         }
 
         return $this->query("UPDATE {$this->table} SET {$sqlRequestPart} 

@@ -4,14 +4,16 @@ namespace App\Controllers;
 
 use Database\DBConnection;
 
-/* Sommaire des méthodes :
+/* SOMMAIRE :
+
 - view
 - viewAdmin
+- isAdmin
+
 */
 
 abstract class Controller
 {
-
     public $db;
 
     public function __construct(DBConnection $db)

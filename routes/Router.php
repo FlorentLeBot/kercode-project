@@ -19,7 +19,6 @@ class Router{
 
     public function get(string $path, string $action)
     {
-        // var_dump($this->routes['GET'][]); die;
         $this->routes['GET'][]  = new Route($path, $action);
     }
     
@@ -27,7 +26,6 @@ class Router{
 
     public function post(string $path, string $action)
     {
-        // var_dump($this->routes['GET'][]); die;
         $this->routes['POST'][]  = new Route($path, $action);
     }
     

@@ -198,24 +198,13 @@ class AdminController extends Controller
         }
     }
 
-    // public function deleteMessage(int $id): void
-    // {
-    //     $this->isAdmin();
-    
-    //     $res = (new ContactModel($this->db))->delete($id);      
-    //     if ($res) {
-    //         header('Location: /kercode-project/admin/contact');
-    //     }
-    // }
     public function deleteMessage(int $id): void
     {
         $this->isAdmin();
 
-        $message = new ContactModel($this->db);
-        $res = $message->delete($id);
-      
+        $res = (new ContactModel($this->db))->delete($id);      
         if ($res) {
             header('Location: /kercode-project/admin/contact');
         }
-    }
+    }    
 }  

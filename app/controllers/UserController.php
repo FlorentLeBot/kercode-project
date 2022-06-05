@@ -38,6 +38,7 @@ class UserController extends Controller
             return header('Location: /kercode-project/login');
         }
     }
+    
     // $username = htmlspecialchars($_POST['username']);
     // $password = $_POST['password'];
     // $res = (new UserModel($this->db))->getConnection($username, $password);
