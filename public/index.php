@@ -67,6 +67,17 @@ $router->get('contact', 'App\Controllers\ContactController&contact');
 
 $router->post('contact', 'App\Controllers\ContactController&postMail');
 
+// ADMIN 
+
+// connexion compte administrateur
+
+$router->get('/login', 'App\Controllers\UserController&login');
+$router->post('/login', 'App\Controllers\UserController&loginPost');
+
+// déconnexion 
+
+$router->get('/logout', 'App\Controllers\UserController&logout');
+
 // ADMIN (CRUD)
 
 /* ------ LIRE ------ */ 

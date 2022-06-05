@@ -4,7 +4,7 @@
             <div class="nav-logo">
                 <h1>Admin</h1>
             </div>
-    
+
             <div class="bloc-links">
                 <a href="/kercode-project/admin/articles" class="bloc-link">
                     <i class="fa-solid fa-database"></i>
@@ -18,10 +18,13 @@
                     <i class="fa-solid fa-envelope"></i>
                     <span class="nav-links">Contact</span>
                 </a>
-      
-                <a href="#" class="bloc-link">
+
+                <?php if (isset($_SESSION['authentication'])): ?>
+                <a href="/kercode-project/logout" class="bloc-link">
                     <span class="nav-links">Se déconnecter</span>
                 </a>
+                <?php endif ?>
+
             </div>
-      
+
         </nav>

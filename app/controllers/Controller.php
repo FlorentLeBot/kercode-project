@@ -55,4 +55,13 @@ abstract class Controller
 
         require VIEWSADMIN . "/" . 'admin' . "/" . 'layouts' . "/" . 'layout.php';
     }
+
+    protected function isAdmin() : bool
+    {
+        if (isset($_SESSION['authentication']) && $_SESSION['authentication'] == 1) {
+            return true;
+        } else {
+            return header('Location: /kercode-project/login');
+        }
+    }
 }

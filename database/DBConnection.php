@@ -12,7 +12,7 @@ class DBConnection
     {
         try {
             // utilisation des variables d'environnement
-            // $path = "mysql:host=" . $_ENV['DB_HOST'] . ":" . $_ENV['DB_PORT'] . ";dbname=" . $_ENV['DB_NAME'] . ";charset=utf8";
+            
             $path = "mysql:host=" . $_ENV['DB_HOST'] . ":" . $_ENV['DB_PORT'] . ";dbname=" . $_ENV['DB_NAME'] . ";charset=utf8";
             
             // nouvelle instance de PDO

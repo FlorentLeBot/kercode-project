@@ -19,7 +19,7 @@
     <!-- le copyright -->
 
     <div id="copyright">
-        <p>copyright 2021</p>
+        <p>copyright 2022</p>
     </div>
 </footer>
 

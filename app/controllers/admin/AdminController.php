@@ -41,6 +41,8 @@ class AdminController extends Controller
     // affichage de la page article - administration des articles
     public function article(): void
     { 
+        $this->isAdmin();
+
         $articles = (new ArticleModel($this->db))->all();
         $this->viewAdmin('admin.dashboard.article', compact('articles'));
     }
@@ -48,6 +50,8 @@ class AdminController extends Controller
     // affichage de la page game - administration des fiches pour les jeux de société
     public function game(): void
     {
+        $this->isAdmin();
+
         $games = (new GameModel($this->db))->all();
         $this->viewAdmin('admin.dashboard.game', compact('games'));
     }
@@ -55,6 +59,8 @@ class AdminController extends Controller
     // affichage de la page contact - récupération du formulaire de contact
     public function contact(): void
     {
+        $this->isAdmin();
+
         $contact = (new ContactModel($this->db))->getMail();
         $this->viewAdmin('admin.dashboard.contact', compact('contact'));
     }
@@ -62,6 +68,8 @@ class AdminController extends Controller
      // lire le message complet
      public function readMessage(int $id): void
      {
+        $this->isAdmin();
+        
          $msg = (new ContactModel($this->db))->find($id);
          $this->viewAdmin('admin.dashboard.readMessage', compact('msg'));
      }
@@ -72,18 +80,24 @@ class AdminController extends Controller
     
     public function createTag(): void
     {
+        $this->isAdmin();
+
         $tags = (new TagModel($this->db))->all();
         $this->viewAdmin('admin.dashboard.formArticle', compact('tags'));
     }
 
     public function createCategory(): void
     {
+        $this->isAdmin();
+
         $categories = (new CategoryModel($this->db))->all();
         $this->viewAdmin('admin.dashboard.formGame', compact('categories'));
     }
 
     public function createArticle(): void
     {
+        $this->isAdmin();
+
         $article = new ArticleModel($this->db);
         if (isset($_POST['tags'])) {
             // array_pop() dépile et retourne la valeur du dernier élément du tableau, le raccourcissant d'un élément.
@@ -98,6 +112,8 @@ class AdminController extends Controller
 
     public function createGame(): void
     {
+        $this->isAdmin();
+
         $game = new GameModel($this->db);
         if (isset($_POST['categories'])) {
             // array_pop() dépile et retourne la valeur du dernier élément du tableau, le raccourcissant d'un élément.
@@ -115,6 +131,8 @@ class AdminController extends Controller
 
     public function editArticle(int $id)
     {
+        $this->isAdmin();
+
         $article = (new ArticleModel($this->db))->find($id);
         $tags = (new TagModel($this->db))->all();
         return $this->viewAdmin('admin.dashboard.formArticle', compact('article', 'tags'));
@@ -122,6 +140,8 @@ class AdminController extends Controller
 
     public function editGame(int $id)
     {
+        $this->isAdmin();
+
         $game = (new GameModel($this->db))->find($id);
         $categories = (new CategoryModel($this->db))->all();
         return $this->viewAdmin('admin.dashboard.formGame', compact('game', 'categories'));
@@ -130,6 +150,8 @@ class AdminController extends Controller
     // mettre à jour un article
     public function updateArticle(int $id)
     {
+        $this->isAdmin();
+
         // array_pop() dépile et retourne la valeur du dernier élément du tableau array, le raccourcissant d'un élément.
         $tags = array_pop($_POST);
         $res = (new ArticleModel($this->db))->updateArticle($id, $tags);
@@ -141,6 +163,8 @@ class AdminController extends Controller
     // mettre à jour un jeu
     public function updateGame(int $id) : void
     {
+        $this->isAdmin();
+
         $game = new GameModel($this->db);
         $categories = array_pop($_POST);
         $res = $game->updateGame($id, $categories);
@@ -156,6 +180,8 @@ class AdminController extends Controller
 
     public function deleteArticle(int $id) : void
     {
+        $this->isAdmin();
+
         $res = (new ArticleModel($this->db))->delete($id);
         if ($res) {
             header("Location: /kercode-project/admin/articles");
@@ -164,6 +190,8 @@ class AdminController extends Controller
 
     public function deleteGame(int $id) : void
     {
+        $this->isAdmin();
+
         $res = (new GameModel($this->db))->delete($id);
         if ($res) {
             header("Location: /kercode-project/admin/games");
@@ -172,6 +200,8 @@ class AdminController extends Controller
 
     // public function deleteMessage(int $id): void
     // {
+    //     $this->isAdmin();
+    
     //     $res = (new ContactModel($this->db))->delete($id);      
     //     if ($res) {
     //         header('Location: /kercode-project/admin/contact');
@@ -179,6 +209,8 @@ class AdminController extends Controller
     // }
     public function deleteMessage(int $id): void
     {
+        $this->isAdmin();
+
         $message = new ContactModel($this->db);
         $res = $message->delete($id);
       
@@ -186,5 +218,4 @@ class AdminController extends Controller
             header('Location: /kercode-project/admin/contact');
         }
     }
-
 }  
