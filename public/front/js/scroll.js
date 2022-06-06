@@ -7,7 +7,7 @@ const scrollOptions = {
 
 function getScrollTop() {
   return (
-    window.pageYOffset - document.documentElement.clientTop
+    window.scrollY - document.documentElement.clientTop
   );
 }
 
