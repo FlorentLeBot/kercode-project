@@ -102,7 +102,7 @@ class AdminController extends Controller
         if (isset($_POST['tags'])) {
             // array_pop() dépile et retourne la valeur du dernier élément du tableau, le raccourcissant d'un élément.
             $tags = array_pop($_POST);
-            $res = $article->create($_POST, $tags);
+            $res = $article->createArticle($_POST, $tags);
             header('Location: /kercode-project/admin/articles');
         } else {
             $res = $article->create($_POST);
@@ -118,11 +118,13 @@ class AdminController extends Controller
         if (isset($_POST['categories'])) {
             // array_pop() dépile et retourne la valeur du dernier élément du tableau, le raccourcissant d'un élément.
             $categories = array_pop($_POST);
-            $res = $game->create($_POST, $categories);
-            header('Location: /kercode-project/admin/articles');
+            // var_dump($categories); die;
+            $res = $game->createGame($_POST, $categories);
+            // var_dump($res); die;
+            header('Location: /kercode-project/admin/games');
         } else {
             $res = $game->create($_POST);
-            header('Location: /kercode-project/admin/articles');
+            header('Location: /kercode-project/admin/games');
         }
     }
     /* METTRE A JOUR */

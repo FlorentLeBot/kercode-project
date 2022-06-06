@@ -2,34 +2,40 @@
 
 <!-- affichage des 3 derniers articles -->
 
-<section class="card">
+<section class="article-home">
 
-    <h2>Les derniers articles</h2>
+    <h2>Découvrez nos actualités</h2>
 
     <?php foreach ($params['articles'] as $article) : ?>
     <article>
-        <h3><?= $article->title ?></h3>
-        <!-- <figure>
-            <img src="#" alt="#">
-        </figure> -->
-        <small class="published"><?= $article->getCreatedAt() ?></small>
+        <h3><?= $article->getExcerptTitle() ?></h3>
+        <figure class="img-size">
+            <img class="img-home" src="/kercode-project/<?=$article->img ?? "" ?>" alt="<?= $article->img_name ?>">
+        </figure>
+        <div class="info">
+            <small class="published"><?= $article->getCreatedAt() ?></small>
+            <a class='btn' title="lire le contenu de l'article"
+                href="/kercode-project/articles/<?= $article->id ?>">Lire l'article</a>
+        </div>
     </article>
     <?php endforeach ?>
 </section>
-
 <!-- affichage des 3 derniers jeux -->
 
-<section class="card">
+<section class="article-home">
 
     <h2>Les derniers jeux</h2>
 
     <?php foreach ($params['games'] as $game) : ?>
     <article>
-        <h3><?= $game->title ?></h3>
-        <!-- <figure>
-            <img src="#" alt="#">
-        </figure> -->
-        <small class="published"><?= $game->getCreatedAt() ?></small>
+        <h3><?= $game->getExcerptTitle() ?></h3>
+        <figure class="img-size">
+            <img class="img-home" src="/kercode-project/<?=$game->img ?? "" ?>" alt="<?= $game->img_name ?>">
+        </figure>
+        <div class="info">
+            <small class="published"><?= $game->getCreatedAt() ?></small>
+            <a class='btn' title="lire le contenu du jeu" href="/kercode-project/games/<?= $game->id ?>">Voir le jeu</a>
+        </div>
     </article>
     <?php endforeach ?>
 </section>

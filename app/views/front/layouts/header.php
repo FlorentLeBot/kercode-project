@@ -57,11 +57,15 @@
                         <!-- menu principal -->
                         <nav id="main-menu">
                             <ul class="bloc-links">
-                                <li class="btn"><a class="link" title="l'accueil" href="/kercode-project/">Accueil</a></li>
-                                <li class="btn"><a class="link" title="les jeux de société" href="/kercode-project/games">Jeux de
+                                <li class="btn"><a class="link" title="l'accueil" href="/kercode-project/">Accueil</a>
+                                </li>
+                                <li class="btn"><a class="link" title="les jeux de société"
+                                        href="/kercode-project/games">Jeux de
                                         société</a></li>
-                                <li class="btn"><a class="link" title="le blog" href="/kercode-project/articles">Articles</a></li>
-                                <li><a class="link" title="nous contacter" href="/kercode-project/contact">Contact</a></li>
+                                <li class="btn"><a class="link" title="le blog"
+                                        href="/kercode-project/articles">Articles</a></li>
+                                <li><a class="link" title="nous contacter" href="/kercode-project/contact">Contact</a>
+                                </li>
                             </ul>
                         </nav>
                     </div>

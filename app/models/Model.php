@@ -98,7 +98,7 @@ abstract class Model
         }   
     }
 
-    public function create(array $data, ?array $tags = null) : mixed
+    public function create(array $data, ?array $tags = null, ?array $category = null) : mixed
     {
         // les parenthèses de la requete
         $firstParenthesis = "";
@@ -161,7 +161,7 @@ abstract class Model
         // extensions accepté
         $extensions = ['jpg', 'png', 'jpeg', 'gif', 'webp'];
         // taille maximum d'une image
-        $maxSize = 400000;
+        $maxSize = 400000000;
         $path = "";
         // si le nom de l'extension, la taille maximum et le code d'erreur est égal à 0 (aucune erreur de téléchargement)...
         if (in_array($extension, $extensions) && $size <= $maxSize && $error == 0) {

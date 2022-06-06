@@ -20,8 +20,9 @@
 :root {
   --font-size: 18px;
   --main-color: rgba(0, 98, 107, 1);
+  --main-color-2: rgba(0, 98, 107, 0.5);
   --secondary-color: rgba(10, 146, 164, 1);
-  --btn-color: rgba(245, 196, 110, 1);
+  --btn-color: rgba(242, 177, 62, 1);
   --white: rgba(255, 255, 255, 1);
   --black: rgba(0, 0, 0, 1);
 }
@@ -75,12 +76,17 @@ button {
   margin: 0 auto;
 }
 
+.btn{
+ 
+}
+
 /* ---------------------------------------------------------------------------------- */
 
 /* le header */
 
 #main-header {
   background-color: var(--main-color);
+  background: linear-gradient(45deg, var(--main-color), var(--main-color-2));
   height: 11rem;
 }
 
@@ -113,13 +119,13 @@ button {
   width: 2.8rem;
   height: 2.8rem;
   border-radius: 1.5rem;
-  background: #f5c46e;
+  background: var(--btn-color);
   box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
     rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
     rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
 }
 .btn-social-networks:hover {
-  background: #f2b13e;
+  filter: brightness(1.2);;
 }
 .btn-social-networks i {
   font-size: 1.5rem;
@@ -261,6 +267,54 @@ button {
   background-color: var(--main-color);
   color: var(--white);
   padding: 0.3rem 0; 
+}
+
+/* ---------------------------------------------------------------------------------- */
+
+/* la page d'accueil */
+
+.article-home article{
+  margin: 1rem auto;
+}
+.article-home h2{
+  text-align: center;
+  margin: 2rem;
+}
+
+.article-home article h3{
+  padding: 0 0 1rem 0;
+  text-align: center;
+  font-style: italic;
+}
+.article-home article .img-size{
+  width: 100%;
+}
+
+.article-home article .img-size .img-home{
+  width: 100%;
+  padding: 0 1rem;
+}
+.article-home article .published{
+  font-size: 0.8rem;
+  padding: 0 0 0 1rem;
+}
+
+.article-home article .info{
+  display: flex;
+}
+.article-home article .info .btn{
+  margin: 2rem 0 0;
+  background-color: var(--btn-color);
+  width: 6rem;
+  height: auto;
+  text-align: center;
+  color: var(--white);
+  border-radius: 0.3rem;
+  border: 1px solid var(--btn-color);
+}
+.article-home article .info .btn:hover{
+  background-color: var(--white);
+  color: var(--black);
 }
 
 /* ---------------------------------------------------------------------------------- */
