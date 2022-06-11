@@ -1,4 +1,6 @@
-<h2 class="main-title">Création et Edition d'une fiche de jeu</h2>
+<h2 class="main-title">Création d'une fiche de jeu</h2>
+
+<?php require_once "search.php" ?>
 
 <button class="btn"><a href="/kercode-project/admin/games/create/">Créer une fiche jeu</a></button>
 

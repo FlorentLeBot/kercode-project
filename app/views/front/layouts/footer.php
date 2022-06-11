@@ -26,6 +26,7 @@
 
 <script src="<?= SCRIPTS . 'front' . "/" . 'js' . "/" . 'active.js' ?>"></script>
 <script src="<?= SCRIPTS . 'front' . "/" . 'js' . "/" . 'scroll.js' ?>"></script>
+<script src="<?= SCRIPTS . 'front' . "/" . 'js' . "/" . 'api-gouv.js' ?>"></script>
 
 </body>
 

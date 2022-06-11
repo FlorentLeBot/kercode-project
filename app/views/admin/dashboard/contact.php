@@ -1,5 +1,7 @@
 <h1 class="title">Les messages</h2>
 
+<?php require_once "search.php" ?>
+
     <div class="table">
         <h3 class="table-title">Utilisateur</h3>
         <h3 class="table-title">Email</h3>

@@ -1,5 +1,7 @@
 <h1 class="title">Les Articles</h1>
 
+<?php require_once "search.php" ?>
+
 <button class="btn"><a href="/kercode-project/admin/articles/create/">Créer un article</a></button>
 
 <div class="table">
