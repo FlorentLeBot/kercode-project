@@ -4,8 +4,9 @@
         <!-- les liens -->
 
         <ul class="col">
-            <li><a title="politique de confidentialité" href="#">Politique de confidentialité</a></li>
-            <li><a title="mentions légales" href="#">Mentions légales</a></li>
+            <li><a title="cookies" href="/kercode-project/notice/cookies">Cookies</a></li>
+            <li><a title="condition générale d'utilisation" href="/kercode-project/notice/cgu">CGU</a></li>
+            <li><a title="mentions légales" href="/kercode-project/notice/mentions-legales">Mentions légales</a></li>
         </ul>
 
         <!-- la fleche retour en haut -->

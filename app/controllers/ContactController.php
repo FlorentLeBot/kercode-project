@@ -11,7 +11,7 @@ class ContactController extends Controller
         return $this->view('front.contact.formContact');
     }   
 
-    function postMail()
+    public function postMail()
     {
         $email = $_POST['email'];
         if (filter_var($email, FILTER_VALIDATE_EMAIL)) {

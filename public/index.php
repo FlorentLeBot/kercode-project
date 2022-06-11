@@ -61,7 +61,20 @@ $router->get('/categories/:id', 'App\Controllers\CategoryController&category');
 
 // affichage de la page contact
 
-$router->get('contact', 'App\Controllers\ContactController&contact');
+$router->get('/contact', 'App\Controllers\ContactController&contact');
+
+// affichage de la page mentions légales
+
+$router->get('/notice/mentions-legales', 'App\Controllers\FrontController&legalNotice');
+
+// affichage de la page condition générale d'utilisation
+
+$router->get('/notice/cgu', 'App\Controllers\FrontController&gcu');
+
+// affichage de la page cookies
+
+$router->get('/notice/cookies', 'App\Controllers\FrontController&cookies');
+
 
 // envoyer un email
 
