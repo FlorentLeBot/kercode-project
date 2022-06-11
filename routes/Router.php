@@ -6,7 +6,6 @@ namespace Router;
 
 use Exceptions\NotFoundException;
 
-
 class Router{
 
     public function __construct(public string $url, public $routes = [] )
