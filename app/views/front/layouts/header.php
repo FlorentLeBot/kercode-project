@@ -55,7 +55,7 @@
                 <div class="menu">
                     <div class="container-menu">
                         <!-- menu principal -->
-                        <nav id="main-menu">
+                        <nav id="main-menu"  >
                             <ul class="bloc-links">
                                 <li>
                                     <a class="link" title="l'accueil" href="/kercode-project/">Accueil</a>

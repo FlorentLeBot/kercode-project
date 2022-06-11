@@ -100,6 +100,7 @@ abstract class Model
 
     public function create(array $data, ?array $tags = null, ?array $category = null) : mixed
     {
+
         // les parenthèses de la requete
         $firstParenthesis = "";
         $secondParenthesis = "";

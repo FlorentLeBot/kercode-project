@@ -22,7 +22,7 @@
 :root {
   --font-size: 18px;
   --main-color: rgba(0, 98, 107, 1);
-  --main-color-2: rgba(0, 98, 107, 0.5);
+  --main-color-2: rgba(0, 98, 107, 0.4);
   --secondary-color: rgba(10, 146, 164, 1);
   --btn-color: rgba(242, 177, 62, 1);
   --white: rgba(255, 255, 255, 1);
@@ -106,7 +106,7 @@ button {
 
 #main-header {
   background-color: var(--main-color);
-  background: linear-gradient(45deg, var(--main-color), var(--main-color-2));
+  background: linear-gradient(180deg, var(--main-color), var(--main-color-2));
   height: 11rem;
 }
 
@@ -270,7 +270,6 @@ button {
   justify-content: center;
   align-items: center;
   margin: 1rem 0 0;
-  text-align: left;
   opacity: 1;
   transition: opacity 0.4s ease;
 }
@@ -293,6 +292,10 @@ button {
 /* ---------------------------------------------------------------------------------- */
 
 /* la page d'accueil */
+
+#slider {
+  display: none;
+}
 
 .article-home {
   width: 100%;
@@ -412,30 +415,30 @@ button {
   height: 100vh;
   cursor: crosshair;
 }
-.game-js .btn{
+.game-js .btn {
   width: 12rem;
 }
 .bubble {
   position: absolute;
   border-radius: 300px;
-  background: rgba(255,166, 0, 1);
+  background: rgba(255, 166, 0, 1);
   opacity: 0;
   animation: anim 8s ease-in-out forwards;
   filter: hue-rotate(0deg);
 }
-@keyframes anim{
-    to{
-        top: -250px;
-        left: var(--left);
-        opacity: 1;
-        filter: hue-rotate(720deg);
-    }
+@keyframes anim {
+  to {
+    top: -250px;
+    left: var(--left);
+    opacity: 1;
+    filter: hue-rotate(720deg);
+  }
 }
-.cpt{
-    font-size: 10rem;
-    text-align: center;
-    margin-top: 20px;
-    color: var(--main-color);
+.cpt {
+  font-size: 10rem;
+  text-align: center;
+  margin-top: 20px;
+  color: var(--main-color);
 }
 
 /* le footer */
@@ -475,15 +478,13 @@ footer #copyright {
 /* ---------------------------------------------------------------------------------- */
 
 @media screen and (min-width: 768px) {
- 
- 
   #main-header {
     margin-top: 40px;
   }
 
   /* menu burger */
- #main-header .menu-wrap .hamburger,
- #main-header .menu-wrap .toggler {
+  #main-header .menu-wrap .hamburger,
+  #main-header .menu-wrap .toggler {
     display: none;
   }
 
@@ -502,6 +503,9 @@ footer #copyright {
     height: 80px;
     transform: scale(1);
   }
+  #main-menu {
+    justify-content: left;
+  }
 
   #main-menu ul {
     display: flex;
@@ -511,12 +515,129 @@ footer #copyright {
   }
   #main-menu ul li a {
     font-size: 1rem;
-    color: white;
+    color: var(--white);
     text-transform: uppercase;
   }
+
   #main-menu ul li a.active,
   #main-menu ul li a:hover {
-    padding: 1rem 0;
+    background-color: var(--secondary-color);
+    color: var(--black);
+    text-decoration: underline var(--black);
+  }
+
+  /* le slider */
+
+  #slider {
+    display: block;
+    position: relative;
+    width: 50%;
+    height: 250px;
+    margin: 80px;
+    font-family: Helvetica;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    margin: 150px auto;
+
+    background-color: transparent;
+  }
+
+
+
+  #slider input[type="radio"] {
+    position: relative;
+    top: 120%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: 10% 15px 0 0;
+    transform: translateX(-83px);
+    opacity: 0.4;
+    cursor: pointer;
+  }
+
+  #slider input:checked {
+    opacity: 1;
+    border: 2px solid #999;
+  }
+
+  #slider label {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    transition: 100ms ease-in-out;
+  }
+
+  #slider .img-size img {
+    width: 100%;
+    height: 400px;
+  }
+
+  /* slider fonctionnality */
+
+  #slide-1:checked ~ #slide1,
+  #slide-2:checked ~ #slide2,
+  #slide-3:checked ~ #slide3,
+  #slide-4:checked ~ #slide4,
+  #slide-5:checked ~ #slide5 {
+    box-shadow: 0 13px 26px rgba(255, 255, 255, 0.3),
+      0 12px 6px rgba(0, 0, 0, 0.2);
+    transform: translate3d(0%, 0, 0px);
+  }
+
+  #slide-1:checked ~ #slide2,
+  #slide-2:checked ~ #slide3,
+  #slide-3:checked ~ #slide4,
+  #slide-4:checked ~ #slide5,
+  #slide-5:checked ~ #slide1 {
+    box-shadow: 0 6px 10px rgba(255, 255, 255, 0.3),
+      0 2px 2px rgba(0, 0, 0, 0.2);
+    transform: translate3d(15%, 0, -100px);
+    opacity: 0.5;
+  }
+
+  #slide-1:checked ~ #slide3,
+  #slide-2:checked ~ #slide4,
+  #slide-3:checked ~ #slide5,
+  #slide-4:checked ~ #slide1,
+  #slide-5:checked ~ #slide2 {
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    transform: translate3d(30%, 0, -250px);
+    opacity: 0.5;
+  }
+
+  #slide-1:checked ~ #slide4,
+  #slide-2:checked ~ #slide5,
+  #slide-3:checked ~ #slide1,
+  #slide-4:checked ~ #slide2,
+  #slide-5:checked ~ #slide3 {
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    transform: translate3d(-30%, 0, -250px);
+    opacity: 0.5;
+  }
+
+  #slide-1:checked ~ #slide5,
+  #slide-2:checked ~ #slide1,
+  #slide-3:checked ~ #slide2,
+  #slide-4:checked ~ #slide3,
+  #slide-5:checked ~ #slide4 {
+    box-shadow: 0 13px 26px rgba(0, 0, 0, 0.3), 12px 6px rgba(0, 0, 0, 0.2);
+    transform: translate3d(-15%, 0, -100px);
+    opacity: 0.5;
+  }
+  /* le logo */
+
+ /* les boutons des réseaux sociaux */
+  #main-header #btn-social-networks {
+    
+    top: 12rem;
+    
   }
 }
 @media screen and (min-width: 993px) {

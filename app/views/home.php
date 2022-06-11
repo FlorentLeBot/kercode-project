@@ -1,5 +1,30 @@
 <h1 class="title">Bienvenue</h1>
 
+<!-- le slider -->
+
+<section id="slider">
+
+    <input class="radio-size" type="radio" name="slider" id="slide-1" checked>
+    <input type="radio" name="slider" id="slide-2">
+    <input type="radio" name="slider" id="slide-3">
+    <input type="radio" name="slider" id="slide-4">
+    <input type="radio" name="slider" id="slide-5">
+
+    <label for="slide-1" class="img-size" id="slide1">
+        <img src="public/upload/629defddebefa0.61197129.jpg" alt="#">
+    </label>
+    <label for="slide-2" class="img-size" id="slide2">
+        <img src="public/upload/629defddebefa0.61197129.jpg" alt="#">
+    </label>
+    <label for="slide-3" class="img-size" id="slide3"><img src="public/upload/629defddebefa0.61197129.jpg"
+            alt="#"></label>
+    <label for="slide-4" class="img-size" id="slide4"><img src="public/upload/629defddebefa0.61197129.jpg"
+            alt="#"></label>
+    <label for="slide-5" class="img-size" id="slide5"><img src="public/upload/629defddebefa0.61197129.jpg"
+            alt="#"></label>
+
+</section>
+
 <!-- affichage des 3 derniers articles -->
 
 <section class="article-home">

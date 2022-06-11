@@ -47,6 +47,7 @@ abstract class Controller
     // affichage les vues de l'administration
     protected function viewAdmin(string $path, array $params = null) : void
     {
+
         ob_start();
 
         $path = str_replace('.', "/", $path);
