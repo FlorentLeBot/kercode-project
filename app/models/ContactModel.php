@@ -9,15 +9,17 @@ class ContactModel extends Model
 {
     protected $table = 'contact';
 
-    public function postMail(string $firstname, string $lastname, string $email, string $address, string $content): string
-    {
-        $firstname = htmlentities($_POST['firstname']);
-        $lastname = htmlentities($_POST['lastname']);
-        $email = htmlentities($_POST['email']);
-        $address = htmlentities($_POST['address']);
-        $content = htmlentities($_POST['content']);
+    public function postMail($data)
+    {     
+        $data = array(
+            ":firstname" => $data['firstname'],
+            ":lastname" => $data['lastname'],
+            ":email" => $data['email'],
+            ":address" =>$data['address'],
+            ":content" =>$data['content']       
+        );
 
-        return $this->query("INSERT INTO {$this->table} ( `firstname`, `lastname`, `email`, `address`, `content`) VALUE(?, ?, ?, ?, ?)", [$firstname, $lastname, $email, $address, $content]);
+        return $this->query("INSERT INTO {$this->table} ( `firstname`, `lastname`, `email`, `address`, `content`) VALUES(:firstname, :lastname, :email, :address, :content)", $data);
     }
 
     public function getMail() : mixed

@@ -13,9 +13,23 @@ class ContactController extends Controller
 
     public function postMail()
     {
+        $firstname = htmlentities($_POST['firstname']);
+        $lastname = htmlentities($_POST['lastname']);
         $email = $_POST['email'];
+        $address = htmlentities($_POST['address']);
+        $content = htmlentities($_POST['content']);
+
+          $data = [
+            "firstname" => $firstname,
+            "lastname" => $lastname,
+            "email" => $email,
+            "address" =>$address,
+            "content" => $content      
+          ];
+
+        
         if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $postMail = (new ContactModel($this->db))->postMail($_POST['firstname'], $_POST['lastname'], $_POST['email'], $_POST['address'], $_POST['content']);
+            $postMail = (new ContactModel($this->db))->postMail($data);
             return header('Location: /kercode-project/');
         }
     }

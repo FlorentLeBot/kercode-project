@@ -229,5 +229,81 @@
         Quels sont les cookies déposés par Clim'actions ?
     </h2>
 
-   
+    <p>
+        Les cookies déposés par Clim'actions sont ceux déposés par l'Hébergeur : OVH – SAS OVH 2 rue Kellermann BP
+        80157
+        59100
+        Roubaix.
+
+        Il peut s’agir de cookies dits « strictement nécessaires » (cookies qui permettent aux visiteurs de naviguer
+        sur le
+        Site
+        internet et nécessaires pour des raisons de sécurité) ou de cookies dits « fonctionnels » (ces cookies
+        "mémorisent"
+        les
+        visiteurs afin d'améliorer leur expérience utilisateur).
+
+        Pour de plus amples informations sur les cookies déposés, vous pouvez consulter la page suivante :
+        www.ovh.com/fr/politique_cookies_ovh.xml
+    </p>
+
+    <h2>
+        Combien de temps les cookies sont-ils stockés sur votre appareil ?
+    </h2>
+
+    <p>
+        La durée pendant laquelle un cookie restera sur votre ordinateur ou votre appareil mobile sera différente
+        selon
+        qu’il
+        s’agit d’un cookie « permanent » ou « de session ». Les cookies de session ne resteront sur votre appareil
+        que
+        le
+        temps
+        de votre navigation. Les cookies permanents resteront sur votre ordinateur ou sur votre appareil mobile
+        jusqu’à
+        ce
+        qu’ils arrivent à expiration ou soient supprimés. En tout état de cause, la durée de vie d’un cookie ne peut
+        excéder
+        treize (13) mois.
+
+        Pour de plus amples informations sur la durée des cookies déposés, vous pouvez consulter la page suivante :
+        www.ovh.com/fr/politique_cookies_ovh.xml
+    </p>
+    <h2>
+        Comment exercer vos choix, selon le navigateur que vous utilisez ?
+    </h2>
+    <p class="last">
+        Pour la gestion des Cookies et de vos choix, la configuration de chaque navigateur est différente. Elle est
+        décrite
+        dans
+        le menu d'aide de votre navigateur, qui vous permettra de savoir de quelle manière modifier vos souhaits en
+        matière de Cookies.
+
+        Pour Internet Explorer™ (windows.microsoft.com), pour Safari™ (docs.info.apple.com), pour Chrome™
+        (support.google.com), pour Firefox™ (support.mozilla.org), pour Opera™ (help.opera.com)
+
+        L’utilisateur peut configurer son ordinateur de la manière suivante, pour refuser l’installation des
+        cookies.
+
+        Sous Internet Explorer :
+        Onglet outil (pictogramme en forme de rouage en haut à droite) / options internet. Cliquez sur
+        Confidentialité
+        et
+        choisissez Bloquer tous les cookies. Validez sur Ok.
+
+        Sous Firefox :
+        En haut de la fenêtre du navigateur, cliquez sur le bouton Firefox, puis aller dans l’onglet Options.
+        Cliquer sur l’onglet Vie privée. Paramétrez les Règles de conservation sur : utiliser les paramètres personnalisés pour
+        l’historique. Enfin décochez-la pour désactiver les cookies.
+        Sous Safari : Cliquez en haut à droite du navigateur sur le pictogramme de menu (symbolisé par un rouage). Sélectionnez
+        Paramètres.
+        Cliquez sur Afficher les paramètres avancés. Dans la section « Confidentialité », cliquez sur Paramètres de
+        contenu.
+        Dans la section « Cookies », vous pouvez bloquer les cookies.
+
+        Sous Chrome : Cliquez en haut à droite du navigateur sur le pictogramme de menu (symbolisé par trois lignes
+        horizontales). Sélectionnez Paramètres. Cliquez sur Afficher les paramètres avancés. Dans la section «
+        Confidentialité
+        », cliquez sur préférences. Dans l’onglet « Confidentialité », vous pouvez bloquer les cookies.
+    </p>
 </section>
