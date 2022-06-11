@@ -441,69 +441,7 @@ button {
   color: var(--main-color);
 }
 
-.form-contact {
-  width: 100%;
-  padding: 2rem;
-}
 
-#form-contact fieldset {
-  padding: 10px;
-  margin: 10px auto;
-  width: 90%;
-  background-color: #0a92a4;
-}
-#form-contact fieldset:hover {
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
-}
-#form-contact fieldset legend {
-  font-weight: 400;
-  text-transform: uppercase;
-  font-size: 1.5rem;
-  color: black;
-}
-
-#form-contact fieldset p {
-  padding: 10px 0;
-  color: black;
-  max-width: 10rem;
-  margin: 0 auto;
-  text-align: left;
-}
-#form-contact fieldset p label {
-  margin-top: 10px;
-}
-#form-contact fieldset p input[type=text],
-#form-contact fieldset p input[type=email] {
-  margin: 10px 0 0;
-  /**/
-  width: 10rem;
-  height: 30px;
-}
-#form-contact fieldset p textarea {
-  width: 10rem;
-  margin-top: 10px;
-}
-#form-contact fieldset p input[type=checkbox] {
-  width: 1.1rem;
-  height: 1.1rem;
-}
-#form-contact fieldset p input[type=checkbox] + label {
-  margin: 0 0 0 2rem;
-}
-
-#form-contact fieldset .btn {
-  display: block;
-  margin: 20px auto 0;
-  padding: 0.4rem;
-  background-color: #f5c46e;
-  color: white;
-}
-#form-contact fieldset .btn:hover {
-  background: #f2b13e;
-}
-
-#form-contact fieldset ::placeholder {
-  text-align: center;
 
 /* le footer */
 

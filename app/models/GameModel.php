@@ -58,10 +58,10 @@ class GameModel extends Model
      
      public function createGame(array $data, ?array $categories = null) : bool
      {
-         $path = $this->upload($_FILES);
          $title = htmlspecialchars($_POST['title']);
          $content = htmlspecialchars($_POST['content']);
          $imgName = htmlspecialchars($_POST['img_name']);
+         $path = $this->upload($_FILES);
  
          parent::create([
              "title" => $title,

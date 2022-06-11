@@ -44,7 +44,7 @@ class AdminController extends Controller
         $this->isAdmin();
 
         $articles = (new ArticleModel($this->db))->all();
-        $this->viewAdmin('admin.dashboard.article', compact('articles'));
+        $this->view('admin.dashboard.article', compact('articles'));
     }
 
     // affichage de la page game - administration des fiches pour les jeux de société
@@ -53,7 +53,7 @@ class AdminController extends Controller
         $this->isAdmin();
 
         $games = (new GameModel($this->db))->all();
-        $this->viewAdmin('admin.dashboard.game', compact('games'));
+        $this->view('admin.dashboard.game', compact('games'));
     }
 
     // affichage de la page contact - récupération du formulaire de contact
@@ -62,7 +62,7 @@ class AdminController extends Controller
         $this->isAdmin();
 
         $contact = (new ContactModel($this->db))->getMail();
-        $this->viewAdmin('admin.dashboard.contact', compact('contact'));
+        $this->view('admin.dashboard.contact', compact('contact'));
     }
 
      // lire le message complet
@@ -71,7 +71,7 @@ class AdminController extends Controller
         $this->isAdmin();
         
          $msg = (new ContactModel($this->db))->find($id);
-         $this->viewAdmin('admin.dashboard.readMessage', compact('msg'));
+         $this->view('admin.dashboard.readMessage', compact('msg'));
      }
 
     /* CREER */
@@ -83,7 +83,7 @@ class AdminController extends Controller
         $this->isAdmin();
 
         $tags = (new TagModel($this->db))->all();
-        $this->viewAdmin('admin.dashboard.formArticle', compact('tags'));
+        $this->view('admin.dashboard.formArticle', compact('tags'));
     }
 
     public function createCategory(): void
@@ -91,7 +91,7 @@ class AdminController extends Controller
         $this->isAdmin();
 
         $categories = (new CategoryModel($this->db))->all();
-        $this->viewAdmin('admin.dashboard.formGame', compact('categories'));
+        $this->view('admin.dashboard.formGame', compact('categories'));
     }
 
     public function createArticle(): void
@@ -137,7 +137,7 @@ class AdminController extends Controller
 
         $article = (new ArticleModel($this->db))->find($id);
         $tags = (new TagModel($this->db))->all();
-        return $this->viewAdmin('admin.dashboard.formArticle', compact('article', 'tags'));
+        return $this->view('admin.dashboard.formArticle', compact('article', 'tags'));
     }
 
     public function editGame(int $id)
@@ -146,7 +146,7 @@ class AdminController extends Controller
 
         $game = (new GameModel($this->db))->find($id);
         $categories = (new CategoryModel($this->db))->all();
-        return $this->viewAdmin('admin.dashboard.formGame', compact('game', 'categories'));
+        return $this->view('admin.dashboard.formGame', compact('game', 'categories'));
     }
 
     // mettre à jour un article
