@@ -20,11 +20,13 @@
                 <input type="email" id="email" name="email" placeholder="email" required>
             </p>
 
-            <p>
+            <!-- Pas de div dans un p (création d'element ul et li avec l'api gouv) -->
+            <div>
                 <label for="address">Entrez votre adresse </label>
                 <input type="text" id="address" name="address" placeholder="adresse" required>
                 <div id="api-address"></div>
-            </p>
+            </div>
+
 
             <p>
                 <label for="message">Entrez votre message </label>
@@ -36,7 +38,7 @@
                 <label for="accept">J'accepte les conditions générales</label>
             </p>
 
-            <p><button class="submit" type="submit">Envoyer</button></p>
+            <button class="submit" type="submit">Envoyer</button>
 
         </fieldset>
     </form>

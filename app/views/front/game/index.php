@@ -1,5 +1,6 @@
 <h1 class="title">Jeux de société</h1>
-<section id="games">
+
+<div id="games">
 
     <?php foreach ($params['games'] as $game) : ?>
 
@@ -18,9 +19,9 @@
             </span>
             <?php endforeach ?>
         </div>
-   
+
         <a class="btn" title="#" href="/kercode-project/games/<?= $game->id ?>">Lire</a>
 
     </article>
     <?php endforeach ?>
-</section>
+</div>

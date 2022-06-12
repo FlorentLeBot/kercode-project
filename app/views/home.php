@@ -2,7 +2,7 @@
 
 <!-- le slider -->
 
-<section id="slider">
+<div id="slider">
 
     <input class="radio-size" type="radio" name="slider" id="slide-1" checked>
     <input type="radio" name="slider" id="slide-2">
@@ -23,7 +23,7 @@
     <label for="slide-5" class="img-size" id="slide5"><img src="public/upload/629defddebefa0.61197129.jpg"
             alt="#"></label>
 
-</section>
+</div>
 
 <!-- affichage des 3 derniers articles -->
 
