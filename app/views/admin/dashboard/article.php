@@ -2,7 +2,7 @@
 
 <?php require_once "search.php" ?>
 
-<a class="btn" title="création d'un article" href="/kercode-project/admin/articles/create/">Créer un article</a>
+<a class="btn-create" title="création d'un article" href="/kercode-project/admin/articles/create/">Créer un article</a>
 
 <div class="table">
     <h2 class="table-title">Id</h2>
@@ -15,11 +15,11 @@
 
 <div class="table-results">
     <ul class="table-item">
-        <li class="item article-id"><?= $article->id ?></li>
-        <li class="item article-title"><?= $article->title ?></li>
-        <li class="item article-created-at"><?= $article->getCreatedAt() ?></li>
+        <li class="item"><?= $article->id ?></li>
+        <li class="item"><?= $article->getExcerptTitle() ?></li>
+        <li class="item"><?= $article->getCreatedAt() ?></li>
         <li>
-            <a title="Modification d'un article"
+            <a class="btn" title="Modification d'un article"
                 href="/kercode-project/admin/articles/edit/<?= $article->id ?>">Modifier</a>
             <form action="/kercode-project/admin/articles/delete/<?= $article->id ?>" method="post">
                 <button type="submit" class="btn">Supprimer</button>

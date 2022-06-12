@@ -13,9 +13,9 @@
 
     <div class="table-results">
         <ul class="table-item">
-            <li class="contact-id"><?= $contact->firstname . " " . $contact->lastname ?></li>
-            <li class="contact-title"><?= $contact->email ?></li>
-            <li class="contact-created-at"><?= $contact->getExcerptContent() ?></li>
+            <li class="item"><?= $contact->firstname . " " . $contact->lastname ?></li>
+            <li class="item"><?= $contact->email ?></li>
+            <li class="item"><?= $contact->getExcerptContent() ?></li>
             <li>
                 <a class="btn" title="Lire l'email" href="/kercode-project/admin/contact/<?= $contact->id ?>">Lire le
                     message</a>

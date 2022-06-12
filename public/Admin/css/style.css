@@ -7,12 +7,11 @@
 /* la barre de recherche */
 /* Articles */
 /* Fiches de jeux */
+/* Les formulaires création d'un article et création d'un jeu */
 /* Contact */
-/* Se déconnecter */
 
 /* media query min-width : 768px */
 /* media query min-width : 993px */
-
 
 /* ---------------------------------------------------------------------------------- */
 /* les variables css */
@@ -24,9 +23,9 @@
   --secondary-color: rgba(10, 146, 164, 1);
   --btn-color: rgba(245, 196, 110, 1);
   --white: rgba(255, 255, 255, 1);
+  --light-color: rgb(244, 244, 244, 1);
   --black: rgba(0, 0, 0, 1);
 }
-
 
 /* ---------------------------------------------------------------------------------- */
 /* mini reset css */
@@ -51,7 +50,6 @@ a {
   text-decoration: none;
 }
 
-
 /* ---------------------------------------------------------------------------------- */
 /*style commun à toutes les pages */
 /* ---------------------------------------------------------------------------------- */
@@ -63,19 +61,27 @@ a {
   grid-template-columns: 1fr;
 }
 
+.center {
+  text-align: center;
+  padding: 1rem 0;
+}
+
 .title {
   padding: 2rem;
   text-align: center;
 }
 
+h2 {
+  font-size: 1.3rem;
+}
 
 /* ---------------------------------------------------------------------------------- */
 /* nav */
 /* ---------------------------------------------------------------------------------- */
 
-.nav-title h1 {
+.nav-title {
   text-align: center;
-  font-size: 45px;
+  font-size: 3rem;
   font-weight: 100;
   padding: 2rem;
 }
@@ -109,7 +115,7 @@ a {
   display: flex;
   align-items: center;
   max-width: 450px;
-  background-color: #f4f4f4;
+  background-color: var(--light-color);
   border-radius: 6px;
   margin: 2rem auto;
   padding: 1rem;
@@ -137,8 +143,7 @@ a {
 }
 
 /* ---------------------------------------------------------------------------------- */
-
-/* Articles */
+/* Articles  /  Fiches de jeux  / Contact */
 /* ---------------------------------------------------------------------------------- */
 
 .table-title {
@@ -152,37 +157,77 @@ a {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
   background-color: #f4f4f4;
 }
+.table-item:hover{
+  filter: brightness(1.20);
+}
 .item {
   padding: 0.4rem;
 }
 
 
-
-.btn{
-  color: var(--white);
-}
-.btn-create{
-  margin: 2rem;
-}
 .btn-create,
 .btn {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.btn-create,
+button.btn,
+a.btn {
   background-color: var(--secondary-color);
   border: none;
-  width: 140px;
-  font-size: 16px;
+  width: 200px;
+  font-size: 1rem;
   height: auto;
   padding: 0.3rem;
-  margin: 0.2rem auto;
+  margin: 0.5rem auto;
+  color: var(--white);
 }
 
 .btn-create:hover,
 .btn:hover {
-  transform: scale(1.2);
+  transform: scale(1.02);
 }
 
+/* ---------------------------------------------------------------------------------- */
+/* Les formulaires création d'un article et création d'un jeu */
+/* ---------------------------------------------------------------------------------- */
 
+#form-blog,
+#form-game {
+  width: 100%;
+  padding: 20px;
+}
+#form-blog p,
+#form-game p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+#form-blog label,
+#form-game label {
+  display: block;
+  width: 200px;
+  text-align: center;
+  margin: 1rem 0;
+}
+#form-blog input,
+#form-game input {
+  height: 30px;
+}
 
-
+#img-article,
+#form-blog input,
+#form-blog textarea,
+#form-blog select,
+#form-game input,
+#form-game textarea,
+#form-game select {
+  width: 300px;
+}
 
 @media screen and (min-width: 993px) {
   .global-container {
@@ -193,79 +238,60 @@ a {
     display: flex;
   }
 
-  
   #side-nav {
     position: fixed;
     width: 250px;
     height: 100%;
-    border-right: 1px solid gray;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
     background-color: #fcfcfc;
   }
-  
-  .bloc-link {    
-    font-weight: 300;
-    color: #838f9f;
-    text-decoration: none;
-    padding: 20px 30px;
+
+  .bloc-links {
+    justify-content: left;
   }
-  
-  .bloc-link i {
-    width: 20px;
+
+  .bloc-link {
+    width: 250px;
   }
-  
-  .bloc-link:hover{
-    background: var(--main-color);
-    color: var(--white);
-  }
-  
+
   .nav-links {
     margin-left: 14px;
   }
-  
-  /* Main  */
+
   .main-content {
     grid-column: 2;
     padding: 30px;
   }
-  
-  
-  
-  .main-title {
-    margin: 30px 0;
-  }
-  
-  /* Table */
-  .table {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-  }
-  
-  .table-title {
-    font-size: 16px;
-    padding: 10px 15px 20px;
-  }
-  
-  .table-results {
-    grid-column: 1/-1;
-  }
-  
+
+  .table,
   .table-item {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     align-items: center;
+  }
+
+  .table-title {
+    font-size: 16px;
     padding: 15px 10px;
   }
-  
-  .table-item:nth-child(odd) {
-    background: #ccc;
+
+  #form-blog label,
+  #form-game label {
+    text-align: left;
   }
-  
-  .table p {
-    padding: 0 15px;
-  }
-  
-  .name {
-    display: list-item;
-  }
-  
 }
+
+
+/* verification w3c */
+
+/*
+
+<p>
+    <a href="http://jigsaw.w3.org/css-validator/check/referer">
+        <img style="border:0;width:88px;height:31px"
+            src="http://jigsaw.w3.org/css-validator/images/vcss"
+            alt="CSS Valide !" />
+    </a>
+</p>
+
+*/

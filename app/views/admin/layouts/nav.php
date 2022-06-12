@@ -1,9 +1,8 @@
 <body>
     <div class="global-container">
         <nav id="side-nav">
-            <div class="nav-title">
-                <p>Admin</p>
-            </div>
+
+            <p class="nav-title ">Admin</p>
 
             <div class="bloc-links">
                 <a href="/kercode-project/admin/articles" class="bloc-link">
