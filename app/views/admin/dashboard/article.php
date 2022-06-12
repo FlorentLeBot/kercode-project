@@ -2,13 +2,13 @@
 
 <?php require_once "search.php" ?>
 
-<button class="btn"><a href="/kercode-project/admin/articles/create/">Créer un article</a></button>
+<a class="btn" title="création d'un article" href="/kercode-project/admin/articles/create/">Créer un article</a>
 
 <div class="table">
-    <h3 class="table-title">Id</h3>
-    <h3 class="table-title">Titre</h3>
-    <h3 class="table-title">Publié le</h3>
-    <h3 class="table-title">Action</h3>
+    <h2 class="table-title">Id</h2>
+    <h2 class="table-title">Titre</h2>
+    <h2 class="table-title">Publié le</h2>
+    <h2 class="table-title">Action</h2>
 </div>
 
 <?php foreach ($params['articles'] as $article) : ?>
@@ -19,12 +19,10 @@
         <li class="item article-title"><?= $article->title ?></li>
         <li class="item article-created-at"><?= $article->getCreatedAt() ?></li>
         <li>
-            <button class="btn">
-                <a title="#" href="/kercode-project/admin/articles/edit/<?= $article->id ?>">Modifier</a>
-            </button>
-
+            <a title="Modification d'un article"
+                href="/kercode-project/admin/articles/edit/<?= $article->id ?>">Modifier</a>
             <form action="/kercode-project/admin/articles/delete/<?= $article->id ?>" method="post">
-                <button type="submit" class="btn">Supprimer</a></button>
+                <button type="submit" class="btn">Supprimer</button>
             </form>
         </li>
     </ul>

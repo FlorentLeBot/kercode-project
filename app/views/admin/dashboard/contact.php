@@ -1,12 +1,12 @@
 <h1 class="title">Les messages</h2>
 
-<?php require_once "search.php" ?>
+    <?php require_once "search.php" ?>
 
     <div class="table">
-        <h3 class="table-title">Utilisateur</h3>
-        <h3 class="table-title">Email</h3>
-        <h3 class="table-title">Message</h3>
-        <h3 class="table-title">Action</h3>
+        <h2 class="table-title">Utilisateur</h2>
+        <h2 class="table-title">Email</h2>
+        <h2 class="table-title">Message</h2>
+        <h2 class="table-title">Action</h2>
     </div>
 
     <?php foreach ($params['contact'] as $contact) : ?>
@@ -17,11 +17,10 @@
             <li class="contact-title"><?= $contact->email ?></li>
             <li class="contact-created-at"><?= $contact->getExcerptContent() ?></li>
             <li>
-                <button class="btn">
-                    <a href="/kercode-project/admin/contact/<?= $contact->id ?>">Lire le message</a>
-                </button>
+                <a class="btn" title="Lire l'email" href="/kercode-project/admin/contact/<?= $contact->id ?>">Lire le
+                    message</a>
                 <form action="/kercode-project/admin/contact/delete/<?= $contact->id ?>" method="post">
-                    <button type="submit">Supprimer</button>
+                    <button class="btn" type="submit">Supprimer</button>
                 </form>
             </li>
         </ul>

@@ -2,7 +2,7 @@
 
 <?php require_once "search.php" ?>
 
-<button class="btn"><a href="/kercode-project/admin/games/create/">Créer une fiche jeu</a></button>
+<a class="btn" title="Créer une fiche pour un jeu de société" href="/kercode-project/admin/games/create/">Créer une fiche jeu</a>
 
 <div class="table">
     <h3 class="table-title">Id</h3>
@@ -19,11 +19,10 @@
         <li class="game-title"><?= $game->title ?></li>
         <li class="game-created-at"><?= $game->getCreatedAt() ?></li>
         <li>
-            <button class="btn"><a href="/kercode-project/admin/games/edit/<?= $game->id ?>">Modifier</a></button>
+            <a class="btn" title="Modification de la fiche du jeu de société" href="/kercode-project/admin/games/edit/<?= $game->id ?>">Modifier</a>
             <form action="/kercode-project/admin/games/delete/<?= $game->id ?>" method="post">
                 <button class="btn" type="submit">Supprimer</button>
-            </form>
-            
+            </form>  
         </li>
     </ul>
 </div>

@@ -1,3 +1,4 @@
+<h1><?= $params['game']->title ??  "Création d'un jeu" ?></h1>
 
 <form id="form-game" enctype="multipart/form-data" method="POST"
     action="<?= isset($params['game']) ? "/kercode-project/admin/games/edit/{$params['game']->id}" : "/kercode-project/admin/games/create" ?>">
@@ -9,8 +10,8 @@
     <!-- CONTENU -->
     <p>
         <label for="content-game">Contenu</label>
-        <textarea name="content" id="content-game" cols="30"
-            rows="8" required><?= $params['game']->content ?? ' ' ?></textarea>
+        <textarea name="content" id="content-game" cols="30" rows="8"
+            required><?= $params['game']->content ?? ' ' ?></textarea>
     </p>
     <!-- IMAGE -->
     <p>
@@ -29,8 +30,8 @@
         <label for="categories">Categories du jeu</label>
         <select multiple name="categories[]" id="categories" required>
             <?php foreach ($params['categories'] as $category) : ?>
-            <option value="<?= $category->id ?>" <?php if (isset($params['game'])) : ?> <?php foreach ($params['game']->getcategories() as $gameTag) {
-                    echo ($category->id === $gameTag->id) ? 'selected' : '';
+            <option value="<?= $category->id ?>" <?php if (isset($params['game'])) : ?> <?php foreach ($params['game']->getcategories() as $gameCategory) {
+                    echo ($category->id === $gameCategory->id) ? 'selected' : '';
                     }
                     ?> <?php endif ?>><?= $category->name ?></option>
             <?php endforeach ?>
@@ -38,8 +39,7 @@
     </p>
     <p>
         <!-- VALIDATION -->
-        <button
-            type="submit"><?= isset($params['game']) ?  'Enregister les modifications' : 'Enregistrer'?>
+        <button type="submit"><?= isset($params['game']) ?  'Enregister les modifications' : 'Enregistrer'?>
         </button>
     </p>
 </form>

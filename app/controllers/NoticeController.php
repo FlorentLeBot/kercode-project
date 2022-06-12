@@ -2,7 +2,7 @@
 
 namespace App\controllers;
 
-class FrontController extends Controller
+class NoticeController extends Controller
 {
     public function legalNotice()
     {

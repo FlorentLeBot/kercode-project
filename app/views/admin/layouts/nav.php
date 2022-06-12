@@ -1,8 +1,8 @@
 <body>
     <div class="global-container">
         <nav id="side-nav">
-            <div class="nav-logo">
-                <h1>Admin</h1>
+            <div class="nav-title">
+                <p>Admin</p>
             </div>
 
             <div class="bloc-links">

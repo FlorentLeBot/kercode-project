@@ -65,15 +65,15 @@ $router->get('/contact', 'App\Controllers\ContactController&contact');
 
 // affichage de la page mentions légales
 
-$router->get('/notice/mentions-legales', 'App\Controllers\FrontController&legalNotice');
+$router->get('/notice/mentions-legales', 'App\Controllers\NoticeController&legalNotice');
 
 // affichage de la page condition générale d'utilisation
 
-$router->get('/notice/cgu', 'App\Controllers\FrontController&gcu');
+$router->get('/notice/cgu', 'App\Controllers\NoticeController&gcu');
 
 // affichage de la page cookies
 
-$router->get('/notice/cookies', 'App\Controllers\FrontController&cookies');
+$router->get('/notice/cookies', 'App\Controllers\NoticeController&cookies');
 
 
 // envoyer un email
