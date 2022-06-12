@@ -1,3 +1,4 @@
+<!-- terms of use -->
 <section class="guc">
     <h1 class="title">Conditions générales d'utilisation</h1>
 
