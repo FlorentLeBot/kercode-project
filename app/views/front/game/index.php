@@ -1,27 +1,31 @@
-<h1 class="title">Jeux de société</h1>
+<section id="games" class="flex">
 
-<div id="games">
+    <h1 class="title">Jeux de société</h1>
 
     <?php foreach ($params['games'] as $game) : ?>
 
-    <article class="games">
+    <article>
 
-        <h2 class="title-game"><?= $game->title ?></h2>
+        <h2><?= $game->getExcerptTitle() ?></h2>
 
-        <figure>
+        <figure class="img-size">
             <img class="game-img" src="/kercode-project/<?=$game->img ?? "" ?>" alt="<?= $game->img_name ?>">
         </figure>
+        
 
-        <div class="categories">
+        <div class="categories flex">
             <?php foreach ($game->getCategories() as $category) : ?>
             <span class="category">
-                <a href="/kercode-project/categories/<?= $category->id ?>"><?= $category->name ?></a>
+                <a title="Une catégorie de jeu de société"
+                    href="/kercode-project/categories/<?= $category->id ?>"><?= $category->name ?></a>
             </span>
             <?php endforeach ?>
         </div>
 
-        <a class="btn" title="#" href="/kercode-project/games/<?= $game->id ?>">Lire</a>
+        <a class="btn" title="consulter une fiche d'un jeu de société"
+            href="/kercode-project/games/<?= $game->id ?>">Lire</a>
 
     </article>
     <?php endforeach ?>
-</div>
+
+</section>

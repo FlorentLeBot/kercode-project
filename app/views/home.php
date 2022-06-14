@@ -27,10 +27,10 @@
 
 <!-- affichage des 3 derniers articles -->
 
-<section class="article-home">
+<section class="article-home flex">
 
     <h2>Découvrez nos actualités</h2>
-    <div class="flex">
+
         <?php foreach ($params['articles'] as $article) : ?>
         <article>
             <h3><?= $article->getExcerptTitle() ?></h3>
@@ -46,11 +46,12 @@
         <?php endforeach ?>
     </div>
 </section>
+
 <!-- affichage des 3 derniers jeux -->
 
 <section class="article-home">
 
-    <h2>Les derniers jeux</h2>
+    <h2 class="title">Les derniers jeux</h2>
     <div class="flex">
         <?php foreach ($params['games'] as $game) : ?>
         <article>

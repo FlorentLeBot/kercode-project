@@ -1,4 +1,4 @@
-<section id="articles">
+<section id="articles" class="flex">
 
     <h1 class="title">Les derniers articles</h1>
 
@@ -31,7 +31,7 @@
                 <?= $article->getCreatedAt() ?>
             </small>
 
-            <a class="btn" title="#" href="/kercode-project/articles/<?= $article->id ?>">Lire l'article</a>
+            <a class="btn" title="lire un article" href="/kercode-project/articles/<?= $article->id ?>">Lire l'article</a>
 
         </article>
         <?php endforeach ?>
