@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    
     <main class="game-js container">
         <h1 class="title">La page demandée est introuvable !</h1>
         <a class="btn" href="/kercode-project">Revenir à l'accueil</a>

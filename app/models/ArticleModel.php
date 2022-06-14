@@ -46,13 +46,14 @@ class ArticleModel extends Model
             return true;
         }
     }
+    // création d'un article
     public function createArticle(array $data, array $tags) : bool
     {
         $path = $this->upload($_FILES);
         $title = htmlspecialchars($_POST['title']);
         $content = htmlspecialchars($_POST['content']);
         $imgName = htmlspecialchars($_POST['img_name']);
-
+        
         parent::create([
             "title" => $title,
             "content" => $content,

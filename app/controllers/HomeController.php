@@ -6,7 +6,7 @@ use App\Models\HomeModel;
 
 class HomeController extends Controller
 {
-    // affichage de la page d'accueil (les 3 derniers articles)
+    // affichage de la page d'accueil (les 3 derniers articles et les 3 derniers jeux)
     public function home()
     {
         $req = new HomeModel;

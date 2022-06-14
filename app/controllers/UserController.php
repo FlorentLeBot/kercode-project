@@ -18,52 +18,28 @@ class UserController extends Controller
         // gestion des erreurs
         $valitator = new Validator($_POST);
         $errors = $valitator->validate([
-            'username'=> ['required', 'min:3'],
-            'password'=> ['required']
+            'username' => ['required', 'min:6'],
+            'password' => ['required']
         ]);
-  
-        if($errors){
+
+        if ($errors) {
             $_SESSION['errors'][] = $errors;
             header('Location: /kercode-project/login');
             exit;
         }
+        // var_dump($_POST['username']);die;
+       
         $user = (new UserModel($this->db))->getConnection($_POST['username']);
-        // var_dump($user); die;
-
-        if (password_verify($_POST['password'], $user->password)) {
-            $_SESSION['authentication'] = (int) $user->admin;
-
-            return header('Location: /kercode-project/admin/articles');
-        } else {
-            return header('Location: /kercode-project/login');
-        }
-    }
     
-    // $username = htmlspecialchars($_POST['username']);
-    // $password = $_POST['password'];
-    // $res = (new UserModel($this->db))->getConnection($username, $password);
-    // $isPasswordCorrect = password_verify($password, $res->password);
-    // $_SESSION['username'] = $res->username; // transformation des variables recupérées en session
-    // $_SESSION['mdp'] = $res->password;
-    //     // var_dump($username, $password); die;
-    //     if (!empty($username) && !empty($password)) {
-    //         if ($isPasswordCorrect && $username) {
-    //             header('Location: /kercode-project/admin/articles');
-    //         } else {
+            if (password_verify($_POST['password'], $user->password)) {
+                $_SESSION['authentication'] = (int) $user->admin;
 
-    //             echo 'vos identifients sont incorrect';
-    //         }
-    //     } else {
-    //         echo 'renseigner vos identifiants';
-    //     }
-    // } 
-
-
-
-
-
-
-
+                return header('Location: /kercode-project/admin/articles');
+            } else {
+                return header('Location: /kercode-project/login');
+            }
+   
+    }
 
     public function logout()
     {

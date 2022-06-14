@@ -27,6 +27,7 @@
   --secondary-color: rgba(10, 146, 164, 1);
   --btn-color: rgba(242, 177, 62, 1);
   --white: rgba(255, 255, 255, 1);
+  --light-color: rgb(244, 244, 244, 1);
   --black: rgba(0, 0, 0, 1);
 }
 
@@ -345,9 +346,62 @@ button {
 /* la page jeux de société */
 /* ---------------------------------------------------------------------------------- */
 
+#games {
+  width: 100%;
+}
+.games {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+width: 30%;
+}
+.games .title-game {
+  text-align: center;
+  font-size: 1.1rem;
+  padding: 1rem;
+}
+.games .game-img {
+  width: 300px;
+  height: auto;
+}
+.games .categories {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  
+}
+
+.games .categories .category {
+  margin: 5px;
+  padding: 8px;
+ 
+  color: var(--white);
+  background-color: var(--main-color);
+}
+.games .categories .category a{
+  color: var(--white);
+}
+
+.games .btn {}
+
 /* ---------------------------------------------------------------------------------- */
 /* un jeu
 /* ---------------------------------------------------------------------------------- */
+
+#game {
+}
+#game div {
+}
+#game div .title {
+}
+#game div .game-img {
+}
+#game div .content {
+}
+#game div .btn {
+}
 
 /* ---------------------------------------------------------------------------------- */
 /* la page articles */
@@ -456,6 +510,58 @@ button {
 /* la page contact */
 /* ---------------------------------------------------------------------------------- */
 
+.form-container {
+  max-width: 100%;
+  margin: 0 auto;
+}
+#form-contact {
+  width: 100%;
+  padding-bottom: 2rem;
+}
+#form-contact .form {
+  background: var(--light-color);
+  padding: 10px;
+  width: 90%;
+  margin: 1rem auto;
+  text-align: center;
+}
+#form-contact .form:hover {
+  box-shadow: 0px 0px 5px var(--secondary-color);
+}
+#form-contact .form legend {
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+}
+#form-contact .form .item-form {
+  padding: 10px 0;
+  color: var(--blanc);
+}
+#form-contact .form .item-form label {
+  display: block;
+  width: 100%;
+}
+
+#form-contact .form .item-form input[type="text"],
+#form-contact .form .item-form input[type="email"] {
+  margin: 10px auto 0;
+  width: 90%;
+  height: 30px;
+}
+
+#form-contact .form p textarea {
+  width: 90%;
+  margin-top: 10px;
+}
+
+#form-contact .form .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 30px;
+}
+
 /* ---------------------------------------------------------------------------------- */
 /* le footer */
 /* ---------------------------------------------------------------------------------- */
@@ -516,22 +622,22 @@ footer #copyright {
   }
 
   .menu {
+    width: 100%;
     visibility: visible;
-    display: flex;
-    align-items: center;
     height: 3rem;
     background-color: var(--secondary-color);
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
   }
 
   .container-menu {
-    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
     background-color: var(--secondary-color);
+    opacity: 1;
     height: 80px;
     transform: scale(1);
-  }
-  #main-menu {
     justify-content: left;
+    transition: none;
   }
 
   #main-menu ul {
@@ -652,6 +758,25 @@ footer #copyright {
     box-shadow: 0 13px 26px rgba(0, 0, 0, 0.3), 12px 6px rgba(0, 0, 0, 0.2);
     transform: translate3d(-15%, 0, -100px);
     opacity: 0.5;
+  }
+
+  /* contact */
+
+  #form-contact {
+    width: 700px;
+    margin: 0 auto;
+    padding-bottom: 2rem;
+  }
+  #form-contact .form .item-form label {
+    width: 200px;
+    float: left;
+    text-align: left;
+  }
+
+  #form-contact .form .item-form input[type="text"],
+  #form-contact .form .item-form input[type="email"],
+  #form-contact .form .item-form textarea {
+    width: 350px;
   }
 }
 

@@ -44,7 +44,7 @@ abstract class Controller
             strpos($path, 'admin') === 0
 
         ) {
-            // je stocke ma vue dans la variable $content
+            // je stocke ma vue dans la variable $adminContent
             $adminContent = ob_get_clean();
 
             require VIEWS . $viewsAdmin;

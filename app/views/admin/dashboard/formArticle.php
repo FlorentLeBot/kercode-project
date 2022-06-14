@@ -1,5 +1,5 @@
 <h1 class='title'>Article</h1>
-<h2 class="center"><?= $params['article']->title ??  "Création d'un article" ?></h2>
+
 <form id="form-blog" enctype="multipart/form-data" method="POST"
     action="<?= isset($params['article']) ? "/kercode-project/admin/articles/edit/{$params['article']->id}" : "/kercode-project/admin/articles/create" ?>">
     <!-- TITRE -->

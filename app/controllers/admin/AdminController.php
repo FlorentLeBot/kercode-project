@@ -118,9 +118,7 @@ class AdminController extends Controller
         if (isset($_POST['categories'])) {
             // array_pop() dépile et retourne la valeur du dernier élément du tableau, le raccourcissant d'un élément.
             $categories = array_pop($_POST);
-            // var_dump($categories); die;
             $res = $game->createGame($_POST, $categories);
-            // var_dump($res); die;
             header('Location: /kercode-project/admin/games');
         } else {
             $res = $game->create($_POST);
@@ -154,6 +152,7 @@ class AdminController extends Controller
     {
         $this->isAdmin();
 
+        $article = new ArticleModel($this->db);
         // array_pop() dépile et retourne la valeur du dernier élément du tableau array, le raccourcissant d'un élément.
         $tags = array_pop($_POST);
         $res = (new ArticleModel($this->db))->updateArticle($id, $tags);
