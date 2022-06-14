@@ -3,11 +3,8 @@
 <?php foreach ($params['tag']->getArticles() as $article) : ?>
 
 <article>
-    <!-- ne pas oublier de mettre un h2 -->
-    <a href="/kercode-project/articles/<?= $article->id ?>"><?= $article->getExcerptTitle() ?></a>
-    <!-- <figure>
-        <img src="#" alt="#">
-    </figure> -->
+    <h2><a href="/kercode-project/articles/<?= $article->id ?>"><?= $article->getExcerptTitle() ?></a></h2>
+    <img class="article-img" src="/kercode-project/<?=$article->img ?? "" ?>" alt="<?= $article->img_name ?>">
     <p><?= $article->content ?></p>
     <p><?= $article->getCreatedAt() ?></p>
 </article>

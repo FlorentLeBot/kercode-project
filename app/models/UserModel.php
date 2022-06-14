@@ -9,6 +9,6 @@ class UserModel extends Model
     public function getConnection(string $username) : UserModel
     {
         return $this->query("SELECT * FROM {$this->table} 
-                              WHERE `username` = ? ", [$username], true);          
+                              WHERE `nom_utilisateur` = ? ", [$username], true);          
     }
 }

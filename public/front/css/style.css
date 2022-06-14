@@ -11,6 +11,7 @@
 /* un article
 /* la page contact */
 /* la page 404 */
+/* la page login */
 /* le footer */
 
 /* media query min-width : 768px */
@@ -25,9 +26,9 @@
   --main-color: rgba(0, 98, 107, 1);
   --main-color-2: rgba(0, 98, 107, 0.4);
   --secondary-color: rgba(10, 146, 164, 1);
-  --btn-color: rgba(242, 177, 62, 1);
+  --btn-color: rgba(245, 195, 110, 1);
   --white: rgba(255, 255, 255, 1);
-  --light-color: rgb(244, 244, 244, 1);
+  --light-color: antiquewhite;
   --black: rgba(0, 0, 0, 1);
 }
 
@@ -48,6 +49,7 @@
 
 body {
   font-family: "Rajdhani", sans-serif;
+  background-color: var(--light-color);
 }
 
 ul {
@@ -82,8 +84,8 @@ button {
 
 .flex {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
@@ -120,8 +122,6 @@ button {
 
 #main-header figure .logo {
   width: 12rem;
-  display: block;
-  margin: 0 auto;
 }
 
 /* les boutons des réseaux sociaux */
@@ -310,8 +310,8 @@ button {
   height: 350px;
   margin: 1rem;
   padding: 1rem;
-  border: 1px black solid;
 }
+
 .article-home h2 {
   text-align: center;
   margin: 2rem;
@@ -354,7 +354,7 @@ button {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-width: 30%;
+  width: 30%;
 }
 .games .title-game {
   text-align: center;
@@ -370,37 +370,45 @@ width: 30%;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  
 }
 
 .games .categories .category {
   margin: 5px;
   padding: 8px;
- 
+
   color: var(--white);
   background-color: var(--main-color);
 }
-.games .categories .category a{
+.games .categories .category a {
   color: var(--white);
 }
 
-.games .btn {}
+.games .btn {
+  padding: 0.2rem;
+}
 
 /* ---------------------------------------------------------------------------------- */
 /* un jeu
 /* ---------------------------------------------------------------------------------- */
 
 #game {
-}
-#game div {
-}
-#game div .title {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 #game div .game-img {
+  width: 100%;
+  margin: 2rem 0;
 }
 #game div .content {
+  width: 80%;
+  margin: 0 auto;
 }
 #game div .btn {
+  width: 200px;
+  margin: 2rem auto;
 }
 
 /* ---------------------------------------------------------------------------------- */
@@ -409,12 +417,21 @@ width: 30%;
 
 #articles {
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
+
+#articles .title {
+  width: 100%;
+}
+
 #articles article {
-  width: 90%;
-  max-width: 500px;
-  height: auto;
-  margin: 1rem auto;
+  width: 80%;
+  max-width: 400px;
+  height: 660px;
+  margin: 1rem;
   background-color: var(--secondary-color);
   color: var(--white);
   border-radius: 1rem;
@@ -422,20 +439,38 @@ width: 30%;
     rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
     rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
 }
+
 #articles article h2 {
   padding: 1rem;
   text-align: center;
+  text-transform: uppercase;
 }
-#articles article figure {
+#articles article .img-size {
   width: 100%;
 }
-#articles article figure img {
-  background-color: var(--white);
+
+#articles article .img-size .article-img {
   width: 100%;
   height: 300px;
   object-fit: cover;
 }
-/* #articles article .tags{} */
+
+#articles article .tags {
+  height: 80px;
+}
+#articles article .tags .tag {
+  background-color: var(--main-color);
+  margin: 5px;
+  padding: 6px;
+}
+#articles article .tags .tag:hover {
+  transform: scale(1.04);
+}
+#articles article .tags .tag a {
+  color: var(--white);
+  text-transform: uppercase;
+}
+
 #articles article .excerpt {
   padding: 1rem;
 }
@@ -443,9 +478,7 @@ width: 30%;
   padding: 1rem;
 }
 #articles article .btn {
-  display: block;
-  text-align: center;
-  padding: 1rem;
+  width: 200px;
 }
 
 /* ---------------------------------------------------------------------------------- */
@@ -460,20 +493,24 @@ width: 30%;
 #one-article p {
   padding: 2rem;
 }
-#one-article figure {
+#one-article .img-size {
   width: 80%;
   margin: 0 auto;
 }
-#one-article img {
+#one-article .article-img {
   width: 100%;
+}
+#one-article .content {
+  width: 80%;
 }
 #one-article .btn {
   width: 12rem;
 }
-
 /* ---------------------------------------------------------------------------------- */
 /* page 404 */
 /* ---------------------------------------------------------------------------------- */
+
+/* mini jeu js */
 
 .game-js {
   overflow: hidden;
@@ -519,10 +556,10 @@ width: 30%;
   padding-bottom: 2rem;
 }
 #form-contact .form {
-  background: var(--light-color);
+  background: var(--white);
   padding: 10px;
   width: 90%;
-  margin: 1rem auto;
+  margin: 2rem auto;
   text-align: center;
 }
 #form-contact .form:hover {
@@ -540,6 +577,7 @@ width: 30%;
 #form-contact .form .item-form label {
   display: block;
   width: 100%;
+  margin-top: 10px;
 }
 
 #form-contact .form .item-form input[type="text"],
@@ -560,6 +598,42 @@ width: 30%;
   justify-content: center;
   width: 150px;
   height: 30px;
+}
+
+/* api adresse */
+
+#api-address .disposition {
+  width: 100%;
+  margin: 1rem 1rem 0;
+  text-align: left;
+}
+
+/* ---------------------------------------------------------------------------------- */
+/* la page login */
+/* ---------------------------------------------------------------------------------- */
+
+.errors-login {
+  width: 100%;
+  text-align: center;
+  margin: 2.5rem auto 0;
+}
+
+#form-login {
+  width: 100%;
+}
+#form-login .item-form {
+  width: 330px;
+  margin: 1rem auto;
+}
+
+#form-login .item-form label {
+  display: block;
+  width: 140px;
+  float: left;
+}
+
+#form-login .item-form input {
+  width: 180px;
 }
 
 /* ---------------------------------------------------------------------------------- */
@@ -603,7 +677,9 @@ footer #copyright {
 /* ---------------------------------------------------------------------------------- */
 
 @media screen and (min-width: 768px) {
-  /* le logo */
+  /* ---------------------------------------------------------------------------------- */
+  /* HEADER */
+  /* ---------------------------------------------------------------------------------- */
 
   /* les boutons des réseaux sociaux */
   #main-header #btn-social-networks {
@@ -621,8 +697,9 @@ footer #copyright {
     display: none;
   }
 
+  
+
   .menu {
-    width: 100%;
     visibility: visible;
     height: 3rem;
     background-color: var(--secondary-color);
@@ -630,13 +707,13 @@ footer #copyright {
   }
 
   .container-menu {
-    max-width: 1200px;
-    margin: 0 auto;
     background-color: var(--secondary-color);
+    /* flex: none;
+        align-items: center;
+      justify-content: center; */
     opacity: 1;
     height: 80px;
     transform: scale(1);
-    justify-content: left;
     transition: none;
   }
 
@@ -664,7 +741,7 @@ footer #copyright {
   #slider {
     display: block;
     position: relative;
-    width: 50%;
+    width: 400px;
     height: 250px;
     margin: 80px;
     font-family: Helvetica;
@@ -778,11 +855,47 @@ footer #copyright {
   #form-contact .form .item-form textarea {
     width: 350px;
   }
+
+  /* api adresse */
+
+  #api-address .disposition {
+    margin-left: 230px;
+  }
+
+  /* ---------------------------------------------------------------------------------- */
+  /* la page articles */
+  /* ---------------------------------------------------------------------------------- */
+
+  #articles article {
+    width: 50%;
+  }
 }
 
 /* ---------------------------------------------------------------------------------- */
-/* media query min-width : 993px */
+/* media query min-width :1200px */
 /* ---------------------------------------------------------------------------------- */
 
-@media screen and (min-width: 993px) {
+@media screen and (min-width: 1200px) {
+  /* ---------------------------------------------------------------------------------- */
+  /* HEADER */
+  /* ---------------------------------------------------------------------------------- */
+
+  /* le menu */
+
+  .menu {
+    justify-content: right;
+  }
+
+  /* le logo */
+
+  /* ---------------------------------------------------------------------------------- */
+  /* les articles */
+  /* ---------------------------------------------------------------------------------- */
+
+  #articles {
+    justify-content: space-between;
+  }
+  #articles article {
+    width: 30%;
+  }
 }

@@ -18,8 +18,8 @@ class UserController extends Controller
         // gestion des erreurs
         $valitator = new Validator($_POST);
         $errors = $valitator->validate([
-            'username' => ['required', 'min:6'],
-            'password' => ['required']
+            'nom_utilisateur' => ['required', 'min:6'],
+            'mot_de_passe' => ['required']
         ]);
 
         if ($errors) {
@@ -27,11 +27,11 @@ class UserController extends Controller
             header('Location: /kercode-project/login');
             exit;
         }
-        // var_dump($_POST['username']);die;
+        // var_dump($_POST['nom_utilisateur']);die;
        
-        $user = (new UserModel($this->db))->getConnection($_POST['username']);
+        $user = (new UserModel($this->db))->getConnection($_POST['nom_utilisateur']);
     
-            if (password_verify($_POST['password'], $user->password)) {
+            if (password_verify($_POST['mot_de_passe'], $user->mot_de_passe)) {
                 $_SESSION['authentication'] = (int) $user->admin;
 
                 return header('Location: /kercode-project/admin/articles');

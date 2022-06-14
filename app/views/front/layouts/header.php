@@ -28,7 +28,7 @@
 
             <!-- logo -->
 
-            <figure>
+            <figure class="flex">
                 <a href="/kercode-project/" title="logo du site">
                     <img class="logo" src="../../kercode-project/public/front/images/logo-jeux-de-societe.svg"
                         alt="logo dessin de jeu de société">
