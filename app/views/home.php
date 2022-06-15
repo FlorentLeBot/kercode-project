@@ -11,17 +11,17 @@
     <input type="radio" name="slider" id="slide-5">
 
     <label for="slide-1" class="img-size" id="slide1">
-        <img src="public/upload/62a9d9bb4395e1.26755034.webp" alt="le 6 qui surprend">
+        <img src="public/Front/images/dixit.jpg" alt="dixit">
     </label>
     <label for="slide-2" class="img-size" id="slide2">
-        <img src="public/upload/62a9d9cf364857.40974609.jpg" alt="le dixit">
+        <img src="public/Front/images/les-loups-garous-de-thiercelieux.jpg" alt="les loups garous de thiercelieux">
     </label>
-    <label for="slide-3" class="img-size" id="slide3"><img src="public/upload/62a9d9a0b83427.28919719.jpg"
-            alt="vraiement très futé"></label>
-    <label for="slide-4" class="img-size" id="slide4"><img src="public/upload/62a9d98d15aa25.55872145.jpg"
-            alt="pandemic"></label>
-    <label for="slide-5" class="img-size" id="slide5"><img src="public/upload/62a9da4328f5a5.73685924.png"
+    <label for="slide-3" class="img-size" id="slide3"><img src="public/Front/images/festival-international-jeux-cannes-2022.png"
             alt="as d'or 2022"></label>
+    <label for="slide-4" class="img-size" id="slide4"><img src="public/Front/images/4751807e7755674766f7f333c6293280f5ec.jpeg"
+            alt="room 25"></label>
+    <label for="slide-5" class="img-size" id="slide5"><img src="public/Front/images/a627e4e61139af43c26eced38db13e610a44.jpeg"
+            alt="le mito"></label>
 
 </div>
 
