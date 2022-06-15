@@ -11,6 +11,7 @@ class ContactController extends Controller
         return $this->view('front.contact.formContact');
     }   
 
+    // envoyer un email
     public function postMail()
     {
         $firstname = htmlentities($_POST['firstname']);

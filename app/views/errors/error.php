@@ -13,7 +13,7 @@
 <body>  
     <main class="container error">
         <h1 class="title">Erreur</h1>
-        <a class="btn" href="/kercode-project">Revenir à l'accueil</a>
+        <a title="revenir à l'accueil" class="btn" href="/kercode-project">Revenir à l'accueil</a>
         <p><?= $error ?></p>
     </main>
 </body>

@@ -1,4 +1,4 @@
-<section id="tag-article" class="flex">
+<section id="tag-article" class="w100 flex">
 
     <h1 class="title"><?= $params['tag']->name ?></h1>
 
@@ -7,7 +7,7 @@
     <?php foreach ($params['tag']->getArticles() as $article) : ?>
 
     <article>
-        <h2><a href="/kercode-project/articles/<?= $article->id ?>"><?= $article->getExcerptTitle() ?></a></h2>
+        <h2><a title="le titre de l'article" href="/kercode-project/articles/<?= $article->id ?>"><?= $article->getExcerptTitle() ?></a></h2>
         <figure class="img-size">
             <img src="/kercode-project/<?=$article->img ?? "" ?>" alt="<?= $article->img_name ?>">
         </figure>

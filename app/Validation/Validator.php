@@ -38,7 +38,7 @@ class Validator
     {
         $value = trim($value);
         if (!isset($value) || is_null($value) || empty($value)) {
-            $this->errors[$name][] = "le {$name} est requis.";
+            $this->errors[$name][] = "Le {$name} est requis.";
         }
     }
 
@@ -50,7 +50,7 @@ class Validator
 
         if (strlen($value) < $limit) {
             
-            $this->errors[$name][] = "le {$name} doit comprendre un minimum de {$limit} caractères.";
+            $this->errors[$name][] = "Le {$name} doit comprendre un minimum de {$limit} caractères.";
         }
     }
 

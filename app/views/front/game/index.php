@@ -1,4 +1,4 @@
-<section id="games" class="flex">
+<section id="games" class="flex w100">
 
     <h1 class="title">Jeux de société</h1>
 

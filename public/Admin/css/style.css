@@ -7,8 +7,8 @@
 /* la barre de recherche */
 /* Articles */
 /* Fiches de jeux */
-/* Les formulaires création d'un article et création d'un jeu */
 /* Contact */
+/* Les formulaires création d'un article et création d'un jeu */
 
 /* media query min-width : 768px */
 /* media query min-width : 993px */
@@ -150,20 +150,20 @@ h2 {
   display: none;
 }
 
-.table-item {
+.table-item,
+.table-item-read-message {
   margin-bottom: 50px;
   padding: 1rem;
   text-align: center;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
   background-color: #f4f4f4;
 }
-.table-item:hover{
-  filter: brightness(1.20);
+.table-item:hover {
+  filter: brightness(1.2);
 }
 .item {
   padding: 0.4rem;
 }
-
 
 .btn-create,
 .btn {
@@ -281,5 +281,3 @@ a.btn {
     text-align: left;
   }
 }
-
-

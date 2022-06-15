@@ -1,4 +1,4 @@
-<article id="one-article" class="flex">
+<article id="one-article" class="w100 flex">
 
     <h1 class="title"><?= $params["article"]->title ?></h1>
     <div class="item">
@@ -8,6 +8,7 @@
     </div>
     <div class="item">
         <p class="content"><?= $params["article"]->content ?></p>
-        <a class='btn' href="/kercode-project/articles">Revenir sur tous les articles</a>
+        <a title="revenir sur la page de tous les articles" class='btn' href="/kercode-project/articles">Revenir sur
+            tous les articles</a>
     </div>
 </article>

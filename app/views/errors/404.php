@@ -13,8 +13,8 @@
     
     <main class="game-js container">
         <h1 class="title">La page demandée est introuvable !</h1>
-        <a class="btn" href="/kercode-project">Revenir à l'accueil</a>
-        <h2 class="cpt">0</h3>
+        <a title="revenir à l'accueil" class="btn" href="/kercode-project">Revenir à l'accueil</a>
+        <h2 class="cpt">0</h2>
     </main>
 
     <script src="<?= SCRIPTS . 'Front' . "/" . 'js' . "/" . 'game.js' ?>"></script>

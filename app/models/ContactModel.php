@@ -22,6 +22,7 @@ class ContactModel extends Model
         return $this->query("INSERT INTO {$this->table} ( `firstname`, `lastname`, `email`, `address`, `content`) VALUES(:firstname, :lastname, :email, :address, :content)", $data);
     }
 
+    // récupération des mails
     public function getMail() : mixed
     {
         return $this->query("SELECT `id`, `firstname`, `lastname`, `email`, `address`, `content` FROM {$this->table}");   

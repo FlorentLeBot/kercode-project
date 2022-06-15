@@ -28,7 +28,7 @@
 
             <!-- logo -->
 
-            <figure class="flex">
+            <figure class="w100 flex">
                 <a href="/kercode-project/" title="logo du site">
                     <img class="logo" src="../../kercode-project/public/front/images/logo-jeux-de-societe.svg"
                         alt="logo dessin de jeu de société">
@@ -38,9 +38,9 @@
             <!-- les boutons des réseaux sociaux -->
             <!-- utilisation d'une div : pas de titre pour l'utilisation d'une section -->
             <div id="btn-social-networks">
-                <a class="btn-social-networks" href="#facebook"><i class="fab fa-facebook"></i></a>
-                <a class="btn-social-networks" href="#twitter"><i class="fab fa-twitter"></i></a>
-                <a class="btn-social-networks" href="#instagram"><i class="fab fa-instagram"></i></a>
+                <a title="facebook" class="btn-social-networks" href="https://fr-fr.facebook.com/"><i class="fab fa-facebook"></i></a>
+                <a title="twitter" class="btn-social-networks" href="https://twitter.com"><i class="fab fa-twitter"></i></a>
+                <a title="instagram" class="btn-social-networks" href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
             </div>
 
             <!-- le menu burger  -->

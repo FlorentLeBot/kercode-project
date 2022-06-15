@@ -32,13 +32,17 @@ formation Kercode (Greta Vannes)</p>
 
 <h2>Installation</h2>
 
-<p>
-    <a href="https://getcomposer.org/"></a>
-</p>
+<p>Installation de composer</p>
+
+<p>composer install</p>
+
+<p>Documentation sur getcomposer.org</p>
 
 <p>Installation de Dotenv</p>
 
 <p>composer require vlucas/phpdotenv</p>
+
+<p>.env-example dans le fichier public et renommer le .env</p>
 
 <p>Se connecter à administration : url (kercode-project/login)</p>
 

@@ -15,7 +15,7 @@
 /* le footer */
 
 /* media query min-width : 768px */
-/* media query min-width : 993px */
+/* media query min-width : 1200px */
 
 /* ---------------------------------------------------------------------------------- */
 /* les variables css */
@@ -30,6 +30,7 @@
   --white: rgba(255, 255, 255, 1);
   --light-color: antiquewhite;
   --black: rgba(0, 0, 0, 1);
+  --color-game: rgba(255, 166, 0, 1);
 }
 
 /* ---------------------------------------------------------------------------------- */
@@ -68,7 +69,17 @@ button {
   border: none;
 }
 
+img {
+  object-fit: cover;
+  width: 100%;
+}
+
+.img-size {
+  width: 100%;
+}
+
 .title {
+  width: 100%;
   text-align: center;
   padding: 3rem 0 0;
   font-size: 2rem;
@@ -85,6 +96,13 @@ button {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+}
+.content {
+  width: 80%;
+  margin: 1rem auto;
+}
+.w100 {
+  width: 100%;
 }
 
 .btn {
@@ -113,10 +131,6 @@ button {
 }
 
 /* le logo */
-
-#main-header figure {
-  width: 100%;
-}
 
 #main-header figure .logo {
   width: 12rem;
@@ -300,24 +314,19 @@ button {
 }
 
 .article-home {
-  width: 100%;
-  margin: 1rem auto;
+  margin: 0 auto 1rem;
 }
-.article-home .title,
-.article-home article .img-size,
-.article-home h2 {
-  width: 100%;
-}
+
 .article-home h2 {
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
+  font-weight: 300;
+  padding: 1rem;
 }
 
 .article-home article {
-  width: 100%;
   max-width: 350px;
-  height: auto;
-  margin: 1rem;
+  margin: 1rem auto;
 }
 
 .article-home article h3 {
@@ -329,7 +338,6 @@ button {
 }
 
 .article-home article .img-size .img-home {
-  width: 100%;
   height: 300px;
   padding: 0 1rem;
 }
@@ -347,16 +355,6 @@ button {
 /* la page articles et la page jeux de société */
 /* ---------------------------------------------------------------------------------- */
 
-#articles,
-#games {
-  width: 100%;
-}
-
-#articles .title,
-#games .title {
-  width: 100%;
-}
-
 #articles article,
 #games article {
   width: 80%;
@@ -370,11 +368,11 @@ button {
 }
 #articles article {
   background-color: var(--secondary-color);
-  height: 660px;
+  height: 740px;
 }
+
 #games article {
   background-color: var(--white);
-  height: auto;
 }
 
 #articles article h2,
@@ -383,19 +381,9 @@ button {
   text-align: center;
   text-transform: uppercase;
 }
+
 #games article h2 {
   color: var(--black);
-}
-#articles article .img-size,
-#games article .img-size {
-  width: 100%;
-}
-
-#articles article .img-size .article-img,
-#games article .img-size .game-img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
 }
 
 #articles article .tags,
@@ -408,10 +396,12 @@ button {
   margin: 5px;
   padding: 6px;
 }
+
 #articles article .tags .tag:hover,
 #games article .categories .category:hover {
   transform: scale(1.04);
 }
+
 #articles article .tags .tag a,
 #games article .categories .category a {
   color: var(--white);
@@ -438,57 +428,37 @@ button {
 /* la page article par tag et la page jeu par catégorie */
 /* ---------------------------------------------------------------------------------- */
 
-#game,
-#one-article,
-#tag-article,
-#category-article {
-  width: 100%;
-}
 #game .title,
 #one-article .title,
 #tag-article .title,
 #category-article .title {
-  margin-bottom: 1rem;
-  width: 100%;
+  margin: 1rem auto;
   text-transform: capitalize;
 }
 
 #tag-article article h2,
 #category-article article h2 {
-  width: 100%;
   text-align: center;
   font-size: 1.2rem;
   margin: 1rem auto;
 }
+
 #tag-article article h2 a,
 #category-article article h2 a {
   text-transform: uppercase;
   color: var(--black);
 }
 
-#game .item .img-size,
-#one-article .item .img-size,
-#tag-article article .img-size,
-#category-article article .img-size {
+#tag-article article,
+#category-article article {
   width: 90%;
-  margin: 0 auto;
+  max-width: 350px;
+  margin: 1rem;
+}
+#tag-article article .img-size img #category-article article .img-size img {
+  width: 50%;
 }
 
-#game .item .img-size img,
-#one-article .item .img-size img,
-#tag-article article .img-size img,
-#category-article article .img-size img {
-  width: 100%;
-  height: 100%;
-}
-
-#game .item .content,
-#one-article .item .content,
-#tag-article article .content,
-#category-article article .content {
-  width: 90%;
-  margin: 1rem auto;
-}
 #game .item .btn,
 #one-article .item .btn,
 #tag-article article .btn,
@@ -513,7 +483,7 @@ button {
 .bubble {
   position: absolute;
   border-radius: 300px;
-  background: rgba(255, 166, 0, 1);
+  background: var(--color-game);
   opacity: 0;
   animation: anim 8s ease-in-out forwards;
   filter: hue-rotate(0deg);
@@ -674,7 +644,7 @@ footer #main-footer {
 }
 
 footer a {
-  color: white;
+  color: var(--white);
   font-size: 1rem;
 }
 
@@ -769,11 +739,10 @@ footer #copyright {
     position: relative;
     width: 500px;
     height: 250px;
-    margin: 80px;
     font-family: Helvetica;
     perspective: 1000px;
     transform-style: preserve-3d;
-    margin: 150px auto;
+    margin: 120px auto;
     background-color: transparent;
   }
 
@@ -904,17 +873,14 @@ footer #copyright {
   #one-article {
     justify-content: space-around;
   }
+
   #game .item,
   #one-article .item,
   #tag-article article,
   #category-article article {
-    width: 40%;
+    width: 45%;
   }
 
-  #game .item .img-size,
-  #one-article .item .img-size {
-    width: 100%;
-  }
   #game .item .img-size img,
   #one-article .item .img-size img {
     margin: 1rem 0;
@@ -949,12 +915,10 @@ footer #copyright {
 
     #articles,
     #games,
-    .article-home {
-      justify-content: space-between;
-    }
+    .article-home,
     #tag-article,
     #category-article {
-      justify-content: left;
+      justify-content: flex-start;
     }
 
     #articles article,

@@ -8,6 +8,7 @@ class CategoryModel extends Model
 {
     protected $table = 'categories';
 
+    // récupération des jeux 
     public function getGames() : array
     {
         return $this->query("SELECT bg.* FROM board_games bg

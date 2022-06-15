@@ -2,6 +2,7 @@
 
 namespace App\controllers;
 
+// affichage des mentions légale ...
 class NoticeController extends Controller
 {
     public function legalNotice()

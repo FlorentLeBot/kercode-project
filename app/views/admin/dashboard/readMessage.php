@@ -1,8 +1,7 @@
 <h1 class="title">Message</h1>
 
-<ul class="table-item">
+<ul class="table-item-read-message">
     <li class="item"><?= $params['msg']->firstname . ' ' . $params['msg']->lastname ?></li>
-    <li class="item"><?= $params['msg']->email ?></li>
     <li class="item"><?= $params['msg']->content ?></li>
     <li>
         <form action="/kercode-project/admin/contact/delete/<?= $params['msg']->id ?>" method="post">
@@ -10,3 +9,4 @@
         </form>
     </li>
 </ul>
+

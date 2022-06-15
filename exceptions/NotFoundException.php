@@ -11,6 +11,8 @@ class NotFoundException extends Exception{
 
         parent::__construct($message, $code, $previous);
     }
+
+    // affichage de la page 404
     public function error404(){
         http_response_code(404);
         require VIEWSERRORS . '404.php';

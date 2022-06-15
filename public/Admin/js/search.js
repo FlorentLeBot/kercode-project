@@ -1,4 +1,3 @@
-
 // l'input de la barre de recherche
 const searchInput = document.getElementById("search");
 console.log(searchInput);

@@ -7,18 +7,19 @@ use App\Validation\Validator;
 
 class UserController extends Controller
 {
+    // affichage de la page login pour l'administration
     public function login()
     {
         return $this->view('authentication.login');
     }
 
+
     public function loginPost()
     {
-
         // gestion des erreurs
         $valitator = new Validator($_POST);
         $errors = $valitator->validate([
-            'nom_utilisateur' => ['required', 'min:6'],
+            'nom_utilisateur' => ['required', 'min:8'],
             'mot_de_passe' => ['required']
         ]);
 
@@ -38,7 +39,6 @@ class UserController extends Controller
             } else {
                 return header('Location: /kercode-project/login');
             }
-   
     }
 
     public function logout()

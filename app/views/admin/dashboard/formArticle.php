@@ -16,7 +16,7 @@
     <!-- IMAGE -->
     <p>
         <label for="img-article">Ajouter une image *</label>
-        <input type="file" name="img" id="img-article" accept="image/png, image/jpeg" required>
+        <input type="file" name="img" id="img-article" required>
     </p>
     <!-- NOM DE L'IMAGE -->
     <p>
@@ -46,3 +46,4 @@
         </button>
     </p>
 </form>
+

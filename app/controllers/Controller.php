@@ -56,21 +56,7 @@ abstract class Controller
         }
     }
 
-    // // affichage les vues de l'administration
-    // protected function viewAdmin(string $path, array $params = null) : void
-    // {
-
-    //     ob_start();
-
-    //     $path = str_replace('.', "/", $path);
-
-    //     require VIEWS . $path . '.php';
-
-    //     $adminContent = ob_get_clean();
-
-    //     require VIEWSADMIN . "/" . 'admin' . "/" . 'layouts' . "/" . 'layout.php';
-    // }
-
+    // vérification si l'admin est connecté
     protected function isAdmin(): bool
     {
         if (isset($_SESSION['authentication']) && $_SESSION['authentication'] == 1) {
