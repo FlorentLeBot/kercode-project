@@ -32,9 +32,16 @@ formation Kercode (Greta Vannes)</p>
 
 <h2>Installation</h2>
 
-<p>Composer :</p>
-<a href="https://getcomposer.org/doc/00-intro.md#installation"></a>
+<p>
+    <a href="https://getcomposer.org/"></a>
+</p>
 
-<p>Dotenv</p>
+<p>Installation de Dotenv</p>
+
+<p>composer require vlucas/phpdotenv</p>
+
+<p>Se connecter à administration : url (kercode-project/login)</p>
+
+<p>Identifiants => Nom utilisateur : administrateur / Mot de passe : admin</p>
 
 <p>Auteur : Florent Le Bot</p>
