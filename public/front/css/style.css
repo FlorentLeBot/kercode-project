@@ -8,8 +8,9 @@
 /* la page articles et la page jeux de société */
 /* la page un article et la page un jeu */
 /* la page article par tag et la page jeu par catégorie */
-/* la page 404 */
+/* la page 404 / les erreurs */
 /* la page contact */
+/* la page cookies / terms of service / legal notice */
 /* la page login */
 /* le footer */
 
@@ -131,7 +132,6 @@ button {
   justify-content: space-between;
   align-items: center;
   width: 50%;
-  max-width: 800px;
 }
 
 .btn-social-networks {
@@ -434,34 +434,70 @@ button {
 /* la page un article et la page un jeu */
 /* ---------------------------------------------------------------------------------- */
 
-#game {
-  width: 100%;
-}
-#game .title {
-  margin-bottom: 1rem;
-  width: 100%;
-}
-#game div .img-size {
-  width: 90%;
-  margin: 0 auto;
-}
-#game div .img-size img {
-  width: 100%;
-}
-#game div .content {
-  width: 80%;
-  margin: 1rem auto;
-}
-#game div .btn {
-  width: 250px;
-}
-
 /* ---------------------------------------------------------------------------------- */
 /* la page article par tag et la page jeu par catégorie */
 /* ---------------------------------------------------------------------------------- */
 
+#game,
+#one-article,
+#tag-article,
+#category-article {
+  width: 100%;
+}
+#game .title,
+#one-article .title,
+#tag-article .title,
+#category-article .title {
+  margin-bottom: 1rem;
+  width: 100%;
+  text-transform: capitalize;
+}
+
+#tag-article article h2,
+#category-article article h2 {
+  width: 100%;
+  text-align: center;
+  font-size: 1.2rem;
+  margin: 1rem auto;
+}
+#tag-article article h2 a,
+#category-article article h2 a {
+  text-transform: uppercase;
+  color: var(--black);
+}
+
+#game .item .img-size,
+#one-article .item .img-size,
+#tag-article article .img-size,
+#category-article article .img-size {
+  width: 90%;
+  margin: 0 auto;
+}
+
+#game .item .img-size img,
+#one-article .item .img-size img,
+#tag-article article .img-size img,
+#category-article article .img-size img {
+  width: 100%;
+  height: 100%;
+}
+
+#game .item .content,
+#one-article .item .content,
+#tag-article article .content,
+#category-article article .content {
+  width: 90%;
+  margin: 1rem auto;
+}
+#game .item .btn,
+#one-article .item .btn,
+#tag-article article .btn,
+#category-article article .btn {
+  width: 250px;
+}
+
 /* ---------------------------------------------------------------------------------- */
-/* page 404 */
+/* page 404 / les erreurs */
 /* ---------------------------------------------------------------------------------- */
 
 /* mini jeu js */
@@ -495,6 +531,10 @@ button {
   text-align: center;
   margin-top: 20px;
   color: var(--main-color);
+}
+
+.error .btn {
+  width: 200px;
 }
 
 /* ---------------------------------------------------------------------------------- */
@@ -560,6 +600,31 @@ button {
   width: 100%;
   margin: 1rem 1rem 0;
   text-align: left;
+}
+
+/* ---------------------------------------------------------------------------------- */
+/* la page cookies / terms of service / legal notice */
+/* ---------------------------------------------------------------------------------- */
+
+.terms-of-service,
+.legal-notice,
+.cookies {
+  width: 80%;
+  margin: 0 auto;
+}
+.terms-of-service .title,
+.legal-notice .title,
+.cookies .title {
+  margin: 0 0 1rem;
+}
+.terms-of-service h2,
+.legal-notice h2,
+.cookies h2 {
+  text-align: center;
+  padding: 2rem;
+}
+.last {
+  margin: 0 0 2rem;
 }
 
 /* ---------------------------------------------------------------------------------- */
@@ -826,7 +891,7 @@ footer #copyright {
   }
 
   /* ---------------------------------------------------------------------------------- */
-  /* la page articles */
+  /* les articles */
   /* ---------------------------------------------------------------------------------- */
 
   #articles article,
@@ -834,72 +899,70 @@ footer #copyright {
   .article-home article {
     width: 50%;
   }
-  #game {
+
+  #game,
+  #one-article {
     justify-content: space-around;
   }
-  #game .item {
+  #game .item,
+  #one-article .item,
+  #tag-article article,
+  #category-article article {
     width: 40%;
   }
-  #game .item .img-size {
+
+  #game .item .img-size,
+  #one-article .item .img-size {
     width: 100%;
   }
-  #game .item .img-size img {
+  #game .item .img-size img,
+  #one-article .item .img-size img {
     margin: 1rem 0;
   }
 
-  #game .item .content {
+  #game .item .content,
+  #one-article .item .content {
     width: 100%;
     margin: 0;
   }
-}
-
-/* ---------------------------------------------------------------------------------- */
-/* media query min-width :1200px */
-/* ---------------------------------------------------------------------------------- */
-
-@media screen and (min-width: 1200px) {
-  /* ---------------------------------------------------------------------------------- */
-  /* HEADER */
-  /* ---------------------------------------------------------------------------------- */
-
-  #main-header {
-    height: auto;
-  }
-  .container-menu {
-    width: 1200px;
-  }
-
-  #main-menu {
-    justify-content: right;
-  }
-
-  #main-header figure {
-    justify-content: left;
-  }
-  #main-header figure .logo {
-    justify-content: left;
-    width: 8rem;
-    margin-top: 1.2rem;
-  }
-
-  #main-header #btn-social-networks {
-    top: 8rem;
-    max-width: 80%;
-  }
 
   /* ---------------------------------------------------------------------------------- */
-  /* les articles */
+  /* media query min-width :1200px */
   /* ---------------------------------------------------------------------------------- */
 
-  #articles,
-  #games,
-  .article-home {
-    justify-content: space-between;
-  }
+  @media screen and (min-width: 1200px) {
+    /* ---------------------------------------------------------------------------------- */
+    /* HEADER */
+    /* ---------------------------------------------------------------------------------- */
 
-  #articles article,
-  #games article,
-  .article-home article {
-    width: 30%;
+    .container-menu {
+      width: 1200px;
+    }
+
+    #main-menu {
+      justify-content: right;
+    }
+
+    /* ---------------------------------------------------------------------------------- */
+    /* les articles */
+    /* ---------------------------------------------------------------------------------- */
+
+    #articles,
+    #games,
+    .article-home {
+      justify-content: space-between;
+    }
+    #tag-article,
+    #category-article {
+      justify-content: left;
+    }
+
+    #articles article,
+    #games article,
+    .article-home article,
+    #tag-article article,
+    #category-article article {
+      width: 30%;
+    }
   }
 }

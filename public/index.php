@@ -69,7 +69,7 @@ $router->get('/notice/mentions-legales', 'App\Controllers\NoticeController&legal
 
 // affichage de la page condition générale d'utilisation
 
-$router->get('/notice/cgu', 'App\Controllers\NoticeController&gcu');
+$router->get('/notice/terms-of-service', 'App\Controllers\NoticeController&termsOfService');
 
 // affichage de la page cookies
 

@@ -29,41 +29,40 @@
 
 <section class="article-home flex">
 
-    <h2>Découvrez nos actualités</h2>
+    <h2 class="title">Découvrez nos actualités</h2>
 
-        <?php foreach ($params['articles'] as $article) : ?>
-        <article>
-            <h3><?= $article->getExcerptTitle() ?></h3>
-            <figure class="img-size">
-                <img class="img-home" src="/kercode-project/<?=$article->img ?? "" ?>" alt="<?= $article->img_name ?>">
-            </figure>
+    <?php foreach ($params['articles'] as $article) : ?>
+    <article>
+        <h3><?= $article->getExcerptTitle() ?></h3>
+        <figure class="img-size">
+            <img class="img-home" src="/kercode-project/<?=$article->img ?? "" ?>" alt="<?= $article->img_name ?>">
+        </figure>
 
-            <small class="published"><?= $article->getCreatedAt() ?></small>
-            <a class='btn' title="lire le contenu de l'article"
-                href="/kercode-project/articles/<?= $article->id ?>">Lire
-                l'article</a>
-        </article>
-        <?php endforeach ?>
+        <small class="published"><?= $article->getCreatedAt() ?></small>
+        <a class='btn' title="lire le contenu de l'article" href="/kercode-project/articles/<?= $article->id ?>">Lire
+            l'article</a>
+    </article>
+    <?php endforeach ?>
     </div>
 </section>
 
 <!-- affichage des 3 derniers jeux -->
 
-<section class="article-home">
+<section class="article-home flex">
 
     <h2 class="title">Les derniers jeux</h2>
-    <div class="flex">
-        <?php foreach ($params['games'] as $game) : ?>
-        <article>
-            <h3><?= $game->getExcerptTitle() ?></h3>
-            <figure class="img-size">
-                <img class="img-home" src="/kercode-project/<?=$game->img ?? "" ?>" alt="<?= $game->img_name ?>">
-            </figure>
 
-            <small class="published"><?= $game->getCreatedAt() ?></small>
-            <a class='btn' title="lire le contenu du jeu" href="/kercode-project/games/<?= $game->id ?>">Voir le jeu</a>
+    <?php foreach ($params['games'] as $game) : ?>
+    <article>
+        <h3><?= $game->getExcerptTitle() ?></h3>
+        <figure class="img-size">
+            <img class="img-home" src="/kercode-project/<?=$game->img ?? "" ?>" alt="<?= $game->img_name ?>">
+        </figure>
 
-        </article>
-        <?php endforeach ?>
-    </div>
+        <small class="published"><?= $game->getCreatedAt() ?></small>
+        <a class='btn' title="lire le contenu du jeu" href="/kercode-project/games/<?= $game->id ?>">Voir le jeu</a>
+
+    </article>
+    <?php endforeach ?>
+
 </section>

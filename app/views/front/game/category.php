@@ -1,12 +1,20 @@
-<h1><?= $params['category']->name ?></h1>
+<section id="category-article" class="flex">
+     
+    <h1 class="title"><?= $params['category']->name ?></h1>
 
-<?php foreach ($params['category']->getGames() as $game) : ?>
+    <!-- récupération de tous les jeux par catégories -->
 
-<article>
-    <h2><a href="/kercode-project/games/<?= $game->id ?>"><?= $game->getExcerptTitle() ?></a></h2>
-    <img class="game-img" src="/kercode-project/<?=$game->img ?? "" ?>" alt="<?= $game->img_name ?>">
-    <p><?= $game->content ?></p>
-    <p><?= $game->getCreatedAt() ?></p>
-</article>
+    <?php foreach ($params['category']->getGames() as $game) : ?>
 
-<?php endforeach ?>
+    <article>
+        <h2><a href="/kercode-project/games/<?= $game->id ?>"><?= $game->getExcerptTitle() ?></a></h2>
+        <figure class="img-size">
+            <img class="game-img" src="/kercode-project/<?=$game->img ?? "" ?>" alt="<?= $game->img_name ?>">
+        </figure>
+        <p class="content"><?= $game->getExcerptContent() ?></p>
+        <a class="btn" title="lire les informations sur le jeu" href="/kercode-project/articles/<?= $game->id ?>">Lire</a>
+    </article>
+
+    <?php endforeach ?>
+
+</section>

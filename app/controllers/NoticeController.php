@@ -9,9 +9,9 @@ class NoticeController extends Controller
         return $this->view('front.notice.legalNotice');
     }   
 
-    public function gcu()
+    public function termsOfService()
     {
-        return $this->view('front.notice.gcu');
+        return $this->view('front.notice.termsOfService');
     }
 
     public function cookies()

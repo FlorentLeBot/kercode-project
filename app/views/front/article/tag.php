@@ -1,12 +1,20 @@
-<h1 class="title"><?= $params['tag']->name ?></h1>
+<section id="tag-article" class="flex">
 
-<?php foreach ($params['tag']->getArticles() as $article) : ?>
+    <h1 class="title"><?= $params['tag']->name ?></h1>
 
-<article>
-    <h2><a href="/kercode-project/articles/<?= $article->id ?>"><?= $article->getExcerptTitle() ?></a></h2>
-    <img class="article-img" src="/kercode-project/<?=$article->img ?? "" ?>" alt="<?= $article->img_name ?>">
-    <p><?= $article->content ?></p>
-    <p><?= $article->getCreatedAt() ?></p>
-</article>
+    <!-- récupération de tous les articles par tag -->
 
-<?php endforeach ?>
+    <?php foreach ($params['tag']->getArticles() as $article) : ?>
+
+    <article>
+        <h2><a href="/kercode-project/articles/<?= $article->id ?>"><?= $article->getExcerptTitle() ?></a></h2>
+        <figure class="img-size">
+            <img src="/kercode-project/<?=$article->img ?? "" ?>" alt="<?= $article->img_name ?>">
+        </figure>
+        <p class="content"><?= $article->getExcerptContent() ?></p>
+        <a class="btn" title="lire un article" href="/kercode-project/articles/<?= $article->id ?>">Lire l'article</a>
+    </article>
+
+    <?php endforeach ?>
+
+</section>

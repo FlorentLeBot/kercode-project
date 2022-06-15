@@ -11,8 +11,9 @@
 </head>
 
 <body>  
-    <main class="container">
+    <main class="container error">
         <h1 class="title">Exception</h1>
+        <a class="btn" href="/kercode-project">Revenir à l'accueil</a>
         <p><?= $e ?></p>
     </main>
 </body>
