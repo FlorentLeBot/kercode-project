@@ -11,8 +11,6 @@
 
         <!-- la fleche retour en haut -->
 
-        <!-- la fleche retour en haut -->
-
         <div class="scroll"><i class="fas fa-arrow-circle-up "></i></div>
 
     </aside>
