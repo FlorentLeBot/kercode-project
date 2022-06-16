@@ -18,15 +18,6 @@ formation Kercode (Greta Vannes)</p>
 
 </p>
 
-<p>
-    <a href="http://jigsaw.w3.org/css-validator/check/referer">
-        <img style="border:0;width:88px;height:31px"
-            src="http://jigsaw.w3.org/css-validator/images/vcss"
-            alt="CSS Valide !" />
-    </a>
-</p>
-
-<p>
 <a href="https://codeclimate.com/github/FlorentLeBot/kercode-project/maintainability"><img src="https://api.codeclimate.com/v1/badges/6881bba2e8c4ea9aebe7/maintainability" /></a>
 </p>
 
